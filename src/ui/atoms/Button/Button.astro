@@ -1,0 +1,32 @@
+---
+import type { IconTypes } from "../Icon/Icon.astro";
+import Icon from "../Icon/Icon.astro";
+
+type ButtonTypes = "outline";
+
+interface WithIconProps {
+  type: IconTypes;
+}
+
+interface Props {
+  type?: ButtonTypes;
+  withIcon?: WithIconProps;
+}
+
+const { type, withIcon } = Astro.props;
+
+const getButtonClass = () => {
+  switch (type) {
+    case "outline":
+      return "button--outline";
+    default:
+      return "";
+  }
+};
+---
+
+<button class={`button ${getButtonClass()}`}>
+  <slot />
+
+  {withIcon && <Icon type={withIcon.type} />}
+</button>
