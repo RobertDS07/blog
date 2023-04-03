@@ -1,0 +1,9 @@
+@import url("../ui/atoms/Button/button.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-blue-night text-white-500;
+}
