@@ -1,10 +1,10 @@
 {
-    "skip-missing": true,
-    "ignores": [
-        "@typescript-eslint/parser",
-        "@astrojs/tailwind",
-        "autoprefixer",
-        "postcss",
-        "tailwindcss"
-    ]
-  }
+  "skip-missing": true,
+  "ignores": [
+    "@typescript-eslint/parser",
+    "@astrojs/tailwind",
+    "autoprefixer",
+    "postcss",
+    "tailwindcss"
+  ]
+}
