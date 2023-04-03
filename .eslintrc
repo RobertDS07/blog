@@ -1,6 +1,6 @@
 {
   "extends": ["prettier"],
-  "plugins": ["prettier", "eslint-plugin-jsx-a11y"],
+  "plugins": ["prettier", "eslint-plugin-jsx-a11y", "eslint-plugin-import-helpers"],
   "overrides": [
     {
       "files": ["*.astro"],
@@ -17,19 +17,44 @@
         "sourceType": "module"
       },
       "rules": {
-        "prettier/prettier": "error",
         "astro/no-conflict-set-directives": "error",
         "astro/no-unused-define-vars-in-style": "error"
       }
     },
     {
-      "files": ["**/*.astro/*.ts", "*.astro/*.tsx"],
+      "files": ["**/*.astro/*.ts", "*.astro/*.tsx", "*.astro/*.ts"],
       "env": {
         "browser": true,
         "es2020": true
       },
       "parserOptions": {
         "sourceType": "module"
+      }
+    },
+    {
+      "files": ["*"],
+      "rules": {
+        "prettier/prettier": "error",
+        "import-helpers/order-imports": [
+          "warn",
+          {
+              "newlinesBetween": "always",
+              "groups": [
+                  "module",
+                  "/^src/",
+                  "/^@public/",
+                  "/^@pages/",
+                  "/^@ui/layouts/",
+                  "/^@ui/templates/",
+                  "/^@ui/atoms/",
+                  "/^@ui/molecules/",
+                  "/^@ui/organisms/",
+                  "/^@css/",
+                  ["parent", "sibling", "index"]
+              ],
+              "alphabetize": { "order": "asc", "ignoreCase": true }
+          }
+        ]
       }
     }
   ]
