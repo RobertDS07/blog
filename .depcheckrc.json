@@ -5,6 +5,7 @@
     "@astrojs/tailwind",
     "autoprefixer",
     "postcss",
-    "tailwindcss"
+    "tailwindcss",
+    "prettier-plugin-tailwindcss"
   ]
 }
