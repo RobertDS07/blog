@@ -1,0 +1,52 @@
+---
+import Button from "@ui/atoms/Button/Button.astro";
+
+import type { NavData } from "./navbar.interface";
+import type InternalProps from "./navbar.interface";
+
+type Props = InternalProps;
+
+const { selectedLink } = Astro.props;
+
+const navData: NavData[] = [
+  {
+    id: "HOME",
+    href: "/",
+    text: "Home",
+  },
+  {
+    id: "FEEDBACKS",
+    href: "/feedbacks",
+    text: "Feedbacks",
+  },
+  {
+    id: "BLOG",
+    href: "/blog",
+    text: "Blog",
+  },
+];
+
+const verifyIfIsSelected = (navData: NavData) => navData.id === selectedLink;
+---
+
+<nav class="flex gap-1">
+  {
+    navData.map((navData, index) => {
+      const isSelected = verifyIfIsSelected(navData);
+
+      return (
+        <Button as="a" class={`${isSelected ? "text-purple-main" : ""}`}>
+          <span class="text-purple-main slashed-zero">0{index + 1}.</span>{" "}
+          {navData.text}
+          {isSelected && (
+            <div class="absolute bottom-0 left-0 flex h-1/4 w-full items-center justify-center">
+              <div class="bg-purple-main h-1/2 w-1/3 rounded" />
+            </div>
+          )}
+        </Button>
+      );
+    })
+  }
+
+  <Button variant="outline" class="ml-4">Resume</Button>
+</nav>
