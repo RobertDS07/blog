@@ -22,19 +22,21 @@
       }
     },
     {
-      "files": ["**/*.astro/*.ts", "*.astro/*.tsx", "*.astro/*.ts"],
+      "files": ["**/*.astro/*.js", "*.astro/*.js"],
       "env": {
         "browser": true,
         "es2020": true
       },
       "parserOptions": {
         "sourceType": "module"
+      },
+      "rules": {
+        "prettier/prettier": "off"
       }
     },
     {
       "files": ["*"],
       "rules": {
-        "prettier/prettier": "error",
         "import-helpers/order-imports": [
           "warn",
           {
@@ -55,6 +57,25 @@
               "alphabetize": { "order": "asc", "ignoreCase": true }
           }
         ]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "env": {
+        "node": true,
+        "es2020": true
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "sourceType": "module"
+      }
+    },
+    {
+      "files": ["*.cjs"],
+      "env": {
+        "node": true,
+        "es2020": true
       }
     }
   ]
