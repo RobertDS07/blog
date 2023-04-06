@@ -1,5 +1,4 @@
 ---
-import type { HTMLAttributes } from "astro/types";
 import fs from "fs";
 
 import ClockIcon from "@public/icons/clock.svg";
@@ -8,11 +7,9 @@ import HeartIcon from "@public/icons/heart.svg";
 import JobIcon from "@public/icons/job.svg";
 import PaperIcon from "@public/icons/paper.svg";
 
-export type IconTypes = "job" | "eye" | "clock" | "paper" | "heart";
+import type InternalProps from "./icon.interface";
 
-interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
-  type: IconTypes;
-}
+type Props = InternalProps;
 
 const { type, ...svgAttributes } = Astro.props;
 
