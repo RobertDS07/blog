@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/**/*.{astro,html,md,mdx,ts}"],
@@ -15,6 +16,9 @@ module.exports = {
           50: "#F5EAEA",
           500: "#D0CDCD",
         },
+      },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
