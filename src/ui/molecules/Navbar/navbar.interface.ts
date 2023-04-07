@@ -11,4 +11,4 @@ interface Props {
 }
 
 export default Props;
-export type { NavData };
+export type { NavData, PossibleNavLinks };
