@@ -1,5 +1,5 @@
 {
-  "extends": ["prettier"],
+  "extends": ["prettier", "eslint:recommended"],
   "plugins": ["prettier", "eslint-plugin-jsx-a11y", "eslint-plugin-import-helpers"],
   "overrides": [
     {
@@ -29,14 +29,12 @@
       },
       "parserOptions": {
         "sourceType": "module"
-      },
-      "rules": {
-        "prettier/prettier": "off"
       }
     },
     {
       "files": ["*"],
       "rules": {
+        "prettier/prettier": "off",
         "import-helpers/order-imports": [
           "warn",
           {
@@ -44,7 +42,6 @@
               "groups": [
                   "module",
                   "/^src/",
-                  "/^@public/",
                   "/^@pages/",
                   "/^@ui/layouts/",
                   "/^@ui/templates/",
