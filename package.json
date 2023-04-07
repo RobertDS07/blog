@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "lint": "eslint 'src/**/*.{js,astro}'",
     "lint:fix": "eslint 'src/**/*.{js,astro}' --fix",
