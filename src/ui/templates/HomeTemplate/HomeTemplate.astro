@@ -1,0 +1,81 @@
+---
+import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
+
+import ArticlesSection from "@ui/organisms/ArticlesSection/ArticlesSection.astro";
+import FeedbacksSection from "@ui/organisms/FeedbacksSection/FeedbacksSection.astro";
+
+import profilePhoto from "/images/profile-picture/robert-damaceno.png";
+---
+
+<BaseLayout selectedNavLink="HOME" pageTitle="Home" hideOverflow={true}>
+  <div class="flex flex-col gap-10 p-11">
+    <div class="flex items-center justify-center">
+      <div class="flex flex-col gap-4">
+        <h5 class="text-xl text-purple-main">Hi, my name is</h5>
+
+        <h1 class="text-3xl font-black text-white-500">
+          Robert Damaceno Santos.<br />Building some things as a developer
+        </h1>
+
+        <p class="text-base font-bold text-white-500">
+          I’m fullstack software engineer, set in great challenges since<br />my
+          first day of work
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-between gap-36 [&>*]:flex-1">
+      <ArticlesSection
+        articles={[
+          {
+            title: "1 branch X merges",
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            title: "1 branch X merges",
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            title: "1 branch X merges",
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+        ]}
+      />
+
+      <FeedbacksSection
+        feedbacks={[
+          {
+            name: "Robert Damaceno",
+            photoSrc: profilePhoto,
+            socialMediaData: {
+              link: "http://localhost",
+              username: "@RobertDS07",
+            },
+            feedback:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            name: "Robert Damaceno",
+            photoSrc: profilePhoto,
+            socialMediaData: {
+              link: "http://localhost",
+              username: "@RobertDS07",
+            },
+            feedback:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            name: "Robert Damaceno",
+            photoSrc: profilePhoto,
+            socialMediaData: {
+              link: "http://localhost",
+              username: "@RobertDS07",
+            },
+            feedback:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>
