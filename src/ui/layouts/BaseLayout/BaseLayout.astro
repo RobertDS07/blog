@@ -1,11 +1,16 @@
 ---
 import "@css/base.css";
 
-interface Props {
-  pageTitle: string;
-}
+import Navbar from "@ui/molecules/Navbar/Navbar.astro";
+import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia.astro";
 
-const { pageTitle } = Astro.props;
+import type InternalProps from "./baseLayout.interface";
+
+import vector from "/svgs/vector.svg";
+
+type Props = InternalProps;
+
+const { pageTitle, selectedNavLink, hideOverflow } = Astro.props;
 ---
 
 <html lang="en">
@@ -16,7 +21,19 @@ const { pageTitle } = Astro.props;
     <title>R - {pageTitle}</title>
   </head>
 
-  <body>
-    <slot />
+  <body class={`${hideOverflow ? "overflow-hidden" : ""} px-16 py-10`}>
+    <div class="relative flex justify-end">
+      <Navbar selectedLink={selectedNavLink} />
+
+      <div class="absolute left-0 top-0 flex flex-col gap-6">
+        <img src={vector} />
+
+        <SocialMedia />
+      </div>
+    </div>
+
+    <main class="p-9">
+      <slot />
+    </main>
   </body>
 </html>
