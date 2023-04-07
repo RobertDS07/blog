@@ -1,6 +1,14 @@
 import type { HTMLAttributes } from "astro/types";
 
-export type IconTypes = "job" | "eye" | "clock" | "paper" | "heart";
+export type IconTypes =
+  | "job"
+  | "eye"
+  | "clock"
+  | "paper"
+  | "heart"
+  | "github"
+  | "twitter"
+  | "linkedin";
 
 interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
   type: IconTypes;
