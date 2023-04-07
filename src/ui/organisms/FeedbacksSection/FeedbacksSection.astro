@@ -1,0 +1,32 @@
+---
+import Button from "@ui/atoms/Button/Button.astro";
+
+import FeedbackCard from "@ui/molecules/FeedbackCard/FeedbackCard.astro";
+
+import type InternalProps from "./feedbacksSection.interface";
+
+type Props = InternalProps;
+
+const { feedbacks } = Astro.props;
+---
+
+<section class="flex flex-col gap-8">
+  <div class="flex justify-between">
+    <h2 class="text-3xl font-bold text-white-500">Latest Feedbacks</h2>
+
+    <Button as="a" withIcon={{ type: "heart" }} class="text-sm">
+      Show more
+    </Button>
+  </div>
+
+  {
+    feedbacks.map((feedback) => (
+      <FeedbackCard
+        name={feedback.name}
+        feedback={feedback.feedback}
+        photoSrc={feedback.photoSrc}
+        socialMediaData={feedback.socialMediaData}
+      />
+    ))
+  }
+</section>
