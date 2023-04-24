@@ -2,6 +2,7 @@
 /** @type {import('tailwindcss/defaultTheme')} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./src/**/*.{astro,html,md,mdx,ts}"],
@@ -15,6 +16,7 @@ module.exports = {
           night: "#0B192E",
         },
         white: {
+          0: "#FFF",
           50: "#F5EAEA",
           500: "#D0CDCD",
         },
@@ -28,6 +30,21 @@ module.exports = {
       minWidth: {
         ...defaultTheme.spacing,
       },
+      textShadow: {
+        sm: "0 0px 5px var(--tw-shadow-color)",
+      },
     },
   },
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };
