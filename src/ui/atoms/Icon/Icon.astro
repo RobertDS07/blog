@@ -3,6 +3,7 @@ import fs from "fs";
 
 import type InternalProps from "./icon.interface";
 
+import BlogIcon from "/public/icons/blog-icon.svg";
 import ClockIcon from "/public/icons/clock.svg";
 import EyeIcon from "/public/icons/eye.svg";
 import GithubIcon from "/public/icons/github.svg";
@@ -34,6 +35,8 @@ const getIconPath = () => {
       return LinkedinIcon;
     case "twitter":
       return TwitterIcon;
+    case "blogIcon":
+      return BlogIcon;
     default:
       throw new Error("Icon not found for type: " + type);
   }
