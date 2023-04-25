@@ -8,7 +8,8 @@ export type IconTypes =
   | "heart"
   | "github"
   | "twitter"
-  | "linkedin";
+  | "linkedin"
+  | "blogIcon";
 
 interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
   type: IconTypes;
