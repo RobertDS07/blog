@@ -7,6 +7,7 @@ type Props = InternalProps;
 const {
   variant,
   withIcon,
+  linkProps,
   class: classAttributes,
   as = "button",
 } = Astro.props;
@@ -30,6 +31,7 @@ const getButtonClass = () => {
     </button>
   ) : (
     <a
+      href={linkProps?.href}
       class={`button ${getButtonClass()} ${classAttributes}`}
       rel="noopener noreferrer"
     >
