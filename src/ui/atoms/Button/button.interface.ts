@@ -10,8 +10,13 @@ interface WithIconProps {
   type: IconTypes;
 }
 
+interface LinkProps {
+  href: string;
+}
+
 interface Props {
   as?: PossibleHtmlTag;
+  linkProps?: LinkProps;
   variant?: ButtonVariants;
   withIcon?: WithIconProps;
   class?: HTMLAttributes<"button">["class"];
