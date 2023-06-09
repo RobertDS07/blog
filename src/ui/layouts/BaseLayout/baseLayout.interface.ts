@@ -1,4 +1,4 @@
-import type { PossibleNavLinks } from "@ui/molecules/Navbar/navbar.interface";
+import type { PossibleNavLinks } from "@ui/organisms/Navbar/navbar.interface";
 
 interface Props {
   pageTitle: string;

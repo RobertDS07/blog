@@ -5,7 +5,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./src/**/*.{astro,html,md,mdx,ts}"],
+  content: ["./src/**/*.{astro,html,md,mdx,ts,tsx}"],
   theme: {
     extend: {
       colors: {

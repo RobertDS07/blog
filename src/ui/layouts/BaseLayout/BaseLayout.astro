@@ -1,12 +1,14 @@
 ---
 import "@css/base.css";
 
-import Navbar from "@ui/molecules/Navbar/Navbar.astro";
+import Icon from "@ui/atoms/Icon/Icon";
+
 import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia.astro";
 
-import type InternalProps from "./baseLayout.interface";
+import Navbar from "@ui/organisms/Navbar/Navbar.astro";
 
-import vector from "/svgs/vector.svg";
+import Vector from "../../../../public/svgs/vector.svg";
+import type InternalProps from "./baseLayout.interface";
 
 type Props = InternalProps;
 
@@ -21,19 +23,31 @@ const { pageTitle, selectedNavLink, hideOverflow } = Astro.props;
     <title>R - {pageTitle}</title>
   </head>
 
-  <body class={`${hideOverflow ? "overflow-hidden" : ""} px-16 py-10`}>
+  <body class={`${hideOverflow ? "overflow-hidden" : ""} px-16 pt-10 pb-5`}>
     <div class="relative flex justify-end">
       <Navbar selectedLink={selectedNavLink} />
 
-      <div class="absolute left-0 top-0 flex flex-col gap-6">
-        <img src={vector} />
+      <div
+        class="pointer-events-none absolute left-0 top-0 flex flex-col gap-6"
+      >
+        <a href="/" class="pointer-events-auto">
+          <Icon type="blogIcon" class="h-16 w-16 xl:hidden" />
+        </a>
 
-        <SocialMedia />
+        <Vector class="hidden xl:block" />
+
+        <div class="pointer-events-auto hidden w-min xl:block">
+          <SocialMedia />
+        </div>
       </div>
     </div>
 
-    <main class="p-9">
+    <main class="p-9 pb-0">
       <slot />
     </main>
+
+    <div class="flex justify-center xl:hidden">
+      <SocialMedia orientation="HORIZONTAL" />
+    </div>
   </body>
 </html>

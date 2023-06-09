@@ -1,17 +1,37 @@
 ---
-import Icon from "@ui/atoms/Icon/Icon.astro";
+import Icon from "@ui/atoms/Icon/Icon";
+
+import type InternalProps from "./socialMedia.interface";
+
+type Props = InternalProps;
+
+const { orientation = "VERTICAL" } = Astro.props;
+
+const isVertical = orientation === "VERTICAL";
 ---
 
-<div class="flex flex-col gap-6">
-  <a>
+<div class={`flex gap-6  ${isVertical ? "flex-col" : "flex-row"}`}>
+  <a
+    target="_blank"
+    href="https://github.com/RobertDS07"
+    rel="noopener noreferrer"
+  >
     <Icon type="github" />
   </a>
 
-  <a>
+  <a
+    target="_blank"
+    href="https://www.linkedin.com/in/robert-d-262b0a129/"
+    rel="noopener noreferrer"
+  >
     <Icon type="linkedin" />
   </a>
 
-  <a>
+  <a
+    target="_blank"
+    href="https://twitter.com/bugextreme1"
+    rel="noopener noreferrer"
+  >
     <Icon type="twitter" />
   </a>
 </div>
