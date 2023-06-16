@@ -1,9 +1,15 @@
-import type { PossibleNavLinks } from "@ui/molecules/Navbar/navbar.interface";
+import type { PossibleNavLinks } from "@ui/organisms/Navbar/navbar.interface";
+
+interface MetaProps {
+  tags: string[];
+  description: string;
+  image: string;
+}
 
 interface Props {
   pageTitle: string;
   selectedNavLink: PossibleNavLinks;
-  hideOverflow?: boolean;
+  meta: MetaProps;
 }
 
 export default Props;

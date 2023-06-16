@@ -1,23 +1,42 @@
 ---
-import Button from "../ui/atoms/Button.astro";
-// Component Imports
+import { getCollection } from "astro:content";
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import HomeTemplate from "@ui/templates/HomeTemplate/HomeTemplate.astro";
+import type HomeTemplateProps from "@ui/templates/HomeTemplate/homeTemplate.interface";
+
+const postsEntries = await getCollection("posts");
+const postsSortedByCreatedAt = postsEntries.sort(
+  (postA, postB) =>
+    new Date(postA.data.createdAt).getTime() -
+    new Date(postB.data.createdAt).getTime()
+);
+const onlyFirstFourPosts = postsSortedByCreatedAt.slice(0, 4);
+const formattedPostsToHome: HomeTemplateProps["articles"] =
+  onlyFirstFourPosts.map((post) => ({
+    title: post.data.title,
+    summary: post.data.description,
+  }));
+
+const feedbacksEntries = await getCollection("feedbacks");
+const feedbacksSortedByCreatedAt = feedbacksEntries.sort(
+  (postA, postB) =>
+    new Date(postA.data.createdAt).getTime() -
+    new Date(postB.data.createdAt).getTime()
+);
+const onlyFirstFourFeedbacks = feedbacksSortedByCreatedAt.slice(0, 4);
+const formattedFeedbackToHome: HomeTemplateProps["feedbacks"] =
+  onlyFirstFourFeedbacks.map((feedback) => ({
+    feedback: feedback.data.feedback,
+    name: feedback.data.name,
+    photoSrc: feedback.data.photoUrl,
+    socialMediaData: {
+      link: feedback.data.socialNetworkLink,
+      username: feedback.data.socialNetworkText,
+    },
+  }));
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro + TailwindCSS</title>
-  </head>
-
-  <body>
-    <div class="grid place-items-center h-screen content-center">
-      <Button name={"name"} />
-    </div>
-  </body>
-</html>
+<HomeTemplate
+  articles={formattedPostsToHome}
+  feedbacks={formattedFeedbackToHome}
+/>

@@ -38,26 +38,27 @@
         "import-helpers/order-imports": [
           "warn",
           {
-              "newlinesBetween": "always",
-              "groups": [
-                  "module",
-                  "/^src/",
-                  "/^@pages/",
-                  "/^@ui/layouts/",
-                  "/^@ui/templates/",
-                  "/^@ui/atoms/",
-                  "/^@ui/molecules/",
-                  "/^@ui/organisms/",
-                  "/^@css/",
-                  ["parent", "sibling", "index"]
-              ],
-              "alphabetize": { "order": "asc", "ignoreCase": true }
+            "newlinesBetween": "always",
+            "alphabetize": { "order": "asc", "ignoreCase": true },
+            "groups": [
+                "/^@astrojs/",
+                "module",
+                "/^src/",
+                "/^@pages/",
+                "/^@ui/layouts/",
+                "/^@ui/templates/",
+                "/^@ui/atoms/",
+                "/^@ui/molecules/",
+                "/^@ui/organisms/",
+                "/^@css/",
+                ["parent", "sibling", "index"]
+            ]
           }
         ]
       }
     },
     {
-      "files": ["*.ts"],
+      "files": ["*.ts", "*.tsx"],
       "env": {
         "node": true,
         "es2020": true
