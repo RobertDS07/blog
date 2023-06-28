@@ -1,0 +1,50 @@
+---
+import "@css/base.css";
+
+import * as fs from "fs/promises";
+
+import photoSrc from "/images/profile-picture/robert-damaceno.png";
+
+const bufferFromPhoto = await fs.readFile(`${process.cwd()}/public${photoSrc}`);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>R</title>
+  </head>
+
+  <body>
+    <main
+      class="flex h-[630px] w-[1260px] flex-col justify-between bg-blue-night p-11"
+    >
+      <div></div>
+
+      <div class="flex justify-center">
+        <h1 class="w-5/6 text-6xl font-bold">@title</h1>
+      </div>
+
+      <div class="flex justify-end">
+        <div class="flex flex-row gap-4">
+          <img
+            src={`data:image/png;base64,${bufferFromPhoto.toString("base64")}`}
+            alt="Photo from Robert Damaceno"
+            class="h-24 w-24 rounded-full shadow-sm shadow-purple-main"
+          />
+
+          <div class="flex flex-col gap-2 text-white-50">
+            <h3 class="text-xl font-bold xs:text-2xl">
+              Robert Damaceno
+
+              <p class="text-xs font-normal opacity-50">@bugextreme1</p>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
