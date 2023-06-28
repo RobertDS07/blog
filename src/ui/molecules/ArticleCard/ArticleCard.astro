@@ -1,16 +1,16 @@
 ---
 import BaseCard from "../BaseCard/BaseCard.astro";
-import type InternalProps from "./articleCard.interface";
+import type Props from "./articleCard.interface";
 
-type Props = InternalProps;
-
-const { summary, title } = Astro.props;
+const { summary, title, articleSlug } = Astro.props;
 ---
 
-<BaseCard>
-  <div class="flex flex-col gap-4 text-white-50">
-    <h3 class="text-2xl font-bold">{title}</h3>
+<a href={`/blog/${articleSlug}`}>
+  <BaseCard>
+    <div class="flex flex-col gap-4 text-white-50">
+      <h3 class="text-xl font-bold xs:text-2xl">{title}</h3>
 
-    <p class="truncate text-xs font-medium">{summary}</p>
-  </div>
-</BaseCard>
+      <p class="text-xs font-medium">{summary}</p>
+    </div>
+  </BaseCard>
+</a>
