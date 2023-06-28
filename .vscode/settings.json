@@ -15,6 +15,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
+    "*.mdx": "markdown",
     "*.css": "tailwindcss"
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ]
 }
