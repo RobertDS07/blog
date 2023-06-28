@@ -5,7 +5,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./src/**/*.{astro,html,md,mdx,ts}"],
+  content: ["./src/**/*.{astro,html,md,mdx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -21,6 +21,10 @@ module.exports = {
           500: "#D0CDCD",
         },
       },
+      screens: {
+        xs: "476px",
+        md: "769px",
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
@@ -33,10 +37,15 @@ module.exports = {
       textShadow: {
         sm: "0 0px 5px var(--tw-shadow-color)",
       },
+      zIndex: {
+        "modal-backdrop": 1040,
+        modal: 1050,
+        "hiddeable-navbar": 1041,
+      },
     },
   },
   plugins: [
-    plugin(function ({ matchUtilities, theme }) {
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           "text-shadow": (value) => ({
