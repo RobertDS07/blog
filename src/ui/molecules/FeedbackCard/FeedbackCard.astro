@@ -1,23 +1,25 @@
 ---
 import BaseCard from "../BaseCard/BaseCard.astro";
-import type InternalProps from "./feedbackCard.interface";
-
-type Props = InternalProps;
+import type Props from "./feedbackCard.interface";
 
 const { feedback, name, photoSrc, socialMediaData } = Astro.props;
 ---
 
 <BaseCard>
   <div class="flex flex-row gap-4">
-    <img src={photoSrc} class="h-16 min-h-16 w-16 min-w-16 rounded-full" />
+    <img
+      src={photoSrc}
+      alt={`Photo from ${name}`}
+      class="hidden h-16 min-h-16 w-16 min-w-16 rounded-full shadow-sm shadow-purple-main transition-all xs:block"
+    />
 
     <div class="flex flex-col gap-2 text-white-50">
-      <h3 class="text-2xl font-bold">
+      <h3 class="text-xl font-bold xs:text-2xl">
         {name}
 
         <a
-          href={socialMediaData.link}
           target="_blank"
+          href={socialMediaData.link}
           rel="noopener noreferrer"
           class="text-xs font-normal opacity-50"
         >
