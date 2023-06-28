@@ -1,39 +1,79 @@
 ---
 import "@css/base.css";
 
-import Navbar from "@ui/molecules/Navbar/Navbar.astro";
-import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia.astro";
+import Icon from "@ui/atoms/Icon/Icon";
 
-import type InternalProps from "./baseLayout.interface";
+import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia";
 
-import vector from "/svgs/vector.svg";
+import HiddleableNavbar from "@ui/organisms/HiddeableNavbar/HiddeableNavbar";
+import Navbar from "@ui/organisms/Navbar/Navbar.astro";
 
-type Props = InternalProps;
+import Vector from "../../../../public/svgs/vector.svg";
+import type Props from "./baseLayout.interface";
 
-const { pageTitle, selectedNavLink, hideOverflow } = Astro.props;
+const { pageTitle, selectedNavLink, meta } = Astro.props;
+
+const CURRENT_URL = Astro.url.href;
+
+const CURRENT_PATHNAME = Astro.url.pathname;
+const ogImagePath =
+  CURRENT_PATHNAME.replace(/^\/(.+)?\/?$/, "$1").replace("/", "-") || "index";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Robert Damaceno Santos" />
+    <meta name="description" content={meta.description} />
+    {meta.tags && <meta name="keywords" content={meta.tags.join(",")} />}
+
+    <meta property="og:title" content={`${pageTitle} - Robert Damaceno`} />
+    <meta property="og:url" content={CURRENT_URL} />
+    <meta property="og:image" content={`/images/og/${ogImagePath}.png`} />
+    <meta property="og:description" content={meta.description} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <title>R - {pageTitle}</title>
   </head>
 
-  <body class={`${hideOverflow ? "overflow-hidden" : ""} px-16 py-10`}>
+  <body class="relative mx-auto max-w-[1800px] px-8 pb-5 pt-10 xs:px-16">
     <div class="relative flex justify-end">
-      <Navbar selectedLink={selectedNavLink} />
+      <div class="block md:hidden">
+        <HiddleableNavbar
+          client:media="(max-width: 768px)"
+          selectedLink={selectedNavLink}
+        />
+      </div>
 
-      <div class="absolute left-0 top-0 flex flex-col gap-6">
-        <img src={vector} />
+      <div class="hidden md:block">
+        <Navbar selectedLink={selectedNavLink} />
+      </div>
 
-        <SocialMedia />
+      <div
+        class="pointer-events-none absolute left-0 top-0 flex flex-col gap-6"
+      >
+        <a href="/" class="pointer-events-auto">
+          <Icon type="blogIcon" class="-ml-2 h-16 w-16 xl:hidden" />
+        </a>
+
+        <Vector class="hidden xl:block" />
+
+        <div class="pointer-events-auto hidden w-min xl:block">
+          <SocialMedia />
+        </div>
       </div>
     </div>
 
-    <main class="p-9">
+    <main class="py-9 pb-0 xl:px-9">
       <slot />
     </main>
+
+    <div class="flex justify-center xl:hidden">
+      <SocialMedia orientation="HORIZONTAL" />
+    </div>
   </body>
 </html>
