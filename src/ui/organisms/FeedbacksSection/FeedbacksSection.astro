@@ -1,21 +1,30 @@
 ---
-import Button from "@ui/atoms/Button/Button.astro";
+import Button from "@ui/atoms/Button/Button";
+import Icon from "@ui/atoms/Icon/Icon";
 
 import FeedbackCard from "@ui/molecules/FeedbackCard/FeedbackCard.astro";
 
-import type InternalProps from "./feedbacksSection.interface";
-
-type Props = InternalProps;
+import type Props from "./feedbacksSection.interface";
 
 const { feedbacks } = Astro.props;
 ---
 
 <section class="flex flex-col gap-8">
   <div class="flex justify-between">
-    <h2 class="text-3xl font-bold text-white-500">Latest Feedbacks</h2>
+    <h2
+      class="w-auto self-center text-2xl font-bold text-white-500 xs:text-3xl"
+    >
+      Feedbacks
+    </h2>
 
-    <Button as="a" withIcon={{ type: "heart" }} class="text-sm">
+    <Button
+      as="a"
+      class="text-xs xs:text-sm"
+      linkProps={{ href: "/feedbacks" }}
+    >
       Show more
+
+      <Icon type="heart" class="hidden xs:block" />
     </Button>
   </div>
 
