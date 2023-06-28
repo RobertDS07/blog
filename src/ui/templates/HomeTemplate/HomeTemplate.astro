@@ -4,78 +4,58 @@ import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
 import ArticlesSection from "@ui/organisms/ArticlesSection/ArticlesSection.astro";
 import FeedbacksSection from "@ui/organisms/FeedbacksSection/FeedbacksSection.astro";
 
-import profilePhoto from "/images/profile-picture/robert-damaceno.png";
+import type Props from "./homeTemplate.interface";
+
+const { articles, feedbacks } = Astro.props;
 ---
 
-<BaseLayout selectedNavLink="HOME" pageTitle="Home" hideOverflow={true}>
-  <div class="flex flex-col gap-10 p-11">
-    <div class="flex items-center justify-center">
+<BaseLayout
+  selectedNavLink="HOME"
+  pageTitle="Home"
+  meta={{
+    description:
+      "I'm fullstack software engineer, set in great challenges since my first day of work",
+    tags: [
+      "Blog",
+      "Desenvolvedor",
+      "Developer",
+      "Desenvolvimento de Software",
+      "Programação",
+      "Desenvolvimento Web",
+      "Desenvolvimento Mobile",
+      "Front-end",
+      "Back-end",
+      "Full Stack",
+      "Banco de Dados",
+      "Segurança da Informação",
+      "Testes de Software",
+      "Metodologias Ágeis",
+      "DevOps",
+      "Arquitetura de Software",
+      "Cloud Computing",
+    ],
+  }}
+>
+  <div class="flex flex-col gap-16 py-11 xs:gap-10 md:px-11">
+    <div class="flex items-center md:justify-center">
       <div class="flex flex-col gap-4">
-        <h5 class="text-xl text-purple-main">Hi, my name is</h5>
+        <p class="text-lg text-purple-main xs:text-xl">Hi, my name is</p>
 
-        <h1 class="text-3xl font-black text-white-500">
+        <h1 class="text-xl font-black text-white-500 xs:text-3xl">
           Robert Damaceno Santos.<br />Building some things as a developer
         </h1>
 
-        <p class="text-base font-bold text-white-500">
+        <h2 class="text-sm font-bold text-white-500 md:text-base">
           I’m fullstack software engineer, set in great challenges since<br />my
           first day of work
-        </p>
+        </h2>
       </div>
     </div>
 
-    <div class="flex justify-between gap-36 [&>*]:flex-1">
-      <ArticlesSection
-        articles={[
-          {
-            title: "1 branch X merges",
-            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-          {
-            title: "1 branch X merges",
-            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-          {
-            title: "1 branch X merges",
-            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-        ]}
-      />
+    <div class="flex flex-col justify-between gap-16 xl:flex-row [&>*]:flex-1">
+      <ArticlesSection articles={articles} />
 
-      <FeedbacksSection
-        feedbacks={[
-          {
-            name: "Robert Damaceno",
-            photoSrc: profilePhoto,
-            socialMediaData: {
-              link: "http://localhost",
-              username: "@RobertDS07",
-            },
-            feedback:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-          {
-            name: "Robert Damaceno",
-            photoSrc: profilePhoto,
-            socialMediaData: {
-              link: "http://localhost",
-              username: "@RobertDS07",
-            },
-            feedback:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-          {
-            name: "Robert Damaceno",
-            photoSrc: profilePhoto,
-            socialMediaData: {
-              link: "http://localhost",
-              username: "@RobertDS07",
-            },
-            feedback:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          },
-        ]}
-      />
+      <FeedbacksSection feedbacks={feedbacks} />
     </div>
   </div>
 </BaseLayout>
