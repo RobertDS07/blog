@@ -1,9 +1,7 @@
 ---
-import Icon from "@ui/atoms/Icon/Icon.astro";
+import Icon from "@ui/atoms/Icon/Icon";
 
-import type InternalProps from "./articlePreview.interface";
-
-type Props = InternalProps;
+import type Props from "./articlePreview.interface";
 
 const { backgroundSrc, minutesToRead, summary, title } = Astro.props;
 ---
@@ -11,21 +9,23 @@ const { backgroundSrc, minutesToRead, summary, title } = Astro.props;
 <article
   class="flex w-min flex-col overflow-hidden rounded-2xl bg-[#2E2929] shadow-sm shadow-purple-main"
 >
-  <div class="relative flex min-h-20 w-72 flex-1 items-center justify-center">
-    <div
-      class={`bg-[url(${backgroundSrc})] opacity-20 absolute top-0 left-0 w-full h-full`}
-    >
-    </div>
+  <div class="relative flex min-h-28 w-72 flex-1 items-center justify-center">
+    <img
+      src={backgroundSrc}
+      class="pointer-events-none absolute left-0 top-0 h-full w-full opacity-20"
+    />
 
     <h3
-      class="z-10 text-2xl font-black text-white-0 shadow-[#ffffff3e] text-shadow-sm"
+      class="z-10 text-center text-xl font-black text-white-0 shadow-[#ffffff3e] text-shadow-sm xs:text-2xl"
     >
       {title}
     </h3>
   </div>
 
   <div class="flex flex-1 flex-col gap-2 p-3">
-    <p class="text-center text-sm font-medium text-white-0">{summary}</p>
+    <p class="text-center text-xs font-medium text-white-0 xs:text-sm">
+      {summary}
+    </p>
 
     <div class="flex items-center justify-center gap-1">
       <Icon type="clock" class="w-4 text-purple-main" />
