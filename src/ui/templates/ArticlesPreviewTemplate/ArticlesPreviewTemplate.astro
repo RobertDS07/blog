@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
+
+import ArticlePreview from "@ui/molecules/ArticlePreview/ArticlePreview.astro";
+
+import type Props from "./articlesPreviewTemplate.interface";
+
+const { articles } = Astro.props;
+---
+
+<BaseLayout
+  pageTitle="Blog"
+  selectedNavLink="BLOG"
+  meta={{
+    description:
+      "Some posts about tips, comments, opinions, tutorials, and more... Anything that I find interesting to share.",
+  }}
+>
+  <div
+    class="flex flex-wrap justify-center gap-14 py-11 xs:gap-16 md:gap-28 2xl:px-16"
+  >
+    {articles.map((article) => <ArticlePreview {...article} />)}
+  </div>
+</BaseLayout>
