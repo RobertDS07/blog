@@ -1,0 +1,25 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+
+import BlogPostTemplate from "@ui/templates/BlogPostTemplate/BlogPostTemplate.astro";
+
+type Props = CollectionEntry<"posts">;
+
+const { render, ...postProps } = Astro.props;
+const { Content } = await render();
+
+export const getStaticPaths = async () => {
+  const blogPostsProps = await getCollection("posts");
+
+  const blogStaticPaths = blogPostsProps.map((props) => ({
+    params: { slug: props.slug },
+    props: props,
+  }));
+
+  return blogStaticPaths;
+};
+---
+
+<BlogPostTemplate {...postProps}>
+  <Content />
+</BlogPostTemplate>
