@@ -1,10 +1,14 @@
 import { defineConfig } from "astro/config";
+
 import { loadEnv } from "vite";
+
 import mdx from "@astrojs/mdx";
 import solid from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+
 import SVGInjectPlugin from "vite-plugin-svg-inject";
+
 import createOgImage from "./astro-integrations/create-og-image/create-og-image";
 
 const { PUCLIC_BASE_URL } = loadEnv(import.meta.env.MODE, process.cwd(), "");
