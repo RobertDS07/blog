@@ -1,0 +1,76 @@
+---
+import { format } from "date-fns";
+
+import Breadcrumb from "@ui/molecules/Breadcrumb/Breadcrumb";
+
+import BaseLayout from "../../layouts/BaseLayout/BaseLayout.astro";
+import type Props from "./blogPostTemplate.interface";
+
+import profilePhoto from "/images/profile-picture/robert-damaceno.png";
+
+const { data, slug } = Astro.props;
+---
+
+<BaseLayout
+  pageTitle={data.title}
+  selectedNavLink="BLOG"
+  meta={{
+    description: data.description,
+    tags: data.tags,
+  }}
+>
+  <div class="flex flex-col gap-11 py-10 md:py-16 xl:px-28 xl:py-11">
+    <div class="flex flex-col gap-5">
+      <Breadcrumb
+        links={[
+          { href: "/", text: "Home" },
+          { href: "/blog", text: "Blog" },
+          { href: `/blog/${slug}`, text: data.title },
+        ]}
+      />
+
+      <div class="flex flex-row gap-4">
+        <img
+          src={profilePhoto}
+          alt="Photo from Robert Damaceno"
+          class="hidden h-16 min-h-16 w-16 min-w-16 rounded-full min-[376px]:block"
+        />
+
+        <div class="flex flex-col gap-2 text-white-50">
+          <h3 class="text-xl font-bold xs:text-2xl">
+            Robert Damaceno
+
+            <a
+              target="_blank"
+              href={import.meta.env.PUCLIC_MY_TWITTER_URL}
+              rel="noopener noreferrer"
+              class="text-xs font-normal opacity-50"
+            >
+              @bugextreme1
+            </a>
+          </h3>
+
+          <p class="text-xs font-medium">
+            Posted on {format(new Date(data.createdAt), "MMM. dd, yyyy")}
+
+            <br />
+
+            {data.timeToReadInMinutes} min
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h1
+      class="text-center text-3xl font-bold text-white-0 md:text-4xl lg:text-5xl"
+    >
+      {data.title}
+    </h1>
+
+    <img src={data.imageUrl} class="h-max max-h-96 w-max self-center" />
+
+    <article>
+      <slot />
+    </article>
+  </div>
+</BaseLayout>
