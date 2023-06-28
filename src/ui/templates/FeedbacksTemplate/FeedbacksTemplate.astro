@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
+
+import FeedbackCard from "@ui/molecules/FeedbackCard/FeedbackCard.astro";
+
+import type Props from "./feedbacksTemplate.interface";
+
+const { feedbacks } = Astro.props;
+---
+
+<BaseLayout
+  selectedNavLink="FEEDBACKS"
+  pageTitle="Feedbacks"
+  meta={{
+    description:
+      "Some feedback from individuals who have worked/collaborated with me during my software development journey.",
+  }}
+>
+  <div class="flex flex-col items-center gap-16 py-11 md:px-11 xl:[&>*]:w-3/5">
+    {feedbacks.map((feedback) => <FeedbackCard {...feedback} />)}
+  </div>
+</BaseLayout>
