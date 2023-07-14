@@ -17,7 +17,7 @@ const CURRENT_URL = Astro.url.href;
 
 const CURRENT_PATHNAME = Astro.url.pathname;
 const ogImagePath =
-  CURRENT_PATHNAME.replace(/^\/(.+)?\/?$/, "$1").replace("/", "-") || "index";
+  CURRENT_PATHNAME.replace(/^\/(.+)?\/?$/, "$1").replace("/", "-") || "index"; //path where og image is auto-generated in build process
 ---
 
 <html lang="en">
@@ -40,7 +40,9 @@ const ogImagePath =
     <title>R - {pageTitle}</title>
   </head>
 
-  <body class="relative mx-auto max-w-[1800px] px-8 pb-5 pt-10 xs:px-16">
+  <body
+    class="relative mx-auto h-screen max-w-[1800px] px-8 pb-5 pt-10 xs:px-16"
+  >
     <div class="relative flex justify-end">
       <div class="block md:hidden">
         <HiddleableNavbar
@@ -68,7 +70,7 @@ const ogImagePath =
       </div>
     </div>
 
-    <main class="py-9 pb-0 xl:px-9">
+    <main class="min-h-[90%] py-9 pb-0 xl:px-9">
       <slot />
     </main>
 
