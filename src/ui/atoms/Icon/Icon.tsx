@@ -5,9 +5,14 @@ import GithubIcon from "../../../../public/icons/github.svg";
 import HeartIcon from "../../../../public/icons/heart.svg";
 import JobIcon from "../../../../public/icons/job.svg";
 import LinkedinIcon from "../../../../public/icons/linkedin.svg";
+import MailIcon from "../../../../public/icons/mail.svg";
 import MenuIcon from "../../../../public/icons/menu.svg";
+import NestIcon from "../../../../public/icons/nest.svg";
 import PaperIcon from "../../../../public/icons/paper.svg";
+import ReactIcon from "../../../../public/icons/react.svg";
+import TailwindIcon from "../../../../public/icons/tailwind.svg";
 import TwitterIcon from "../../../../public/icons/twitter.svg";
+import TypescriptIcon from "../../../../public/icons/typescript.svg";
 import type Props from "./icon.interface";
 
 const Icon = ({ type, ...svgAttributes }: Props) => {
@@ -33,6 +38,16 @@ const Icon = ({ type, ...svgAttributes }: Props) => {
         return BlogIcon;
       case "menuIcon":
         return MenuIcon;
+      case "mailIcon":
+        return MailIcon;
+      case "nest":
+        return NestIcon;
+      case "react":
+        return ReactIcon;
+      case "tailwind":
+        return TailwindIcon;
+      case "typescript":
+        return TypescriptIcon;
       default:
         throw new Error("Icon not found for type: " + type);
     }
