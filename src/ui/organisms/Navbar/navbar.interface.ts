@@ -1,8 +1,14 @@
-type PossibleNavLinks = "HOME" | "FEEDBACKS" | "BLOG" | "TIMELINE" | "RESUME";
+type PossibleNavLinks =
+  | "HOME"
+  | "FEEDBACKS"
+  | "BLOG"
+  | "TIMELINE"
+  | "RESUME"
+  | "ABOUT";
 
 interface NavData {
   id: PossibleNavLinks;
-  text: string;
+  text: Capitalize<string>;
   href: string;
 }
 

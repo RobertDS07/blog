@@ -16,6 +16,11 @@ export const NAV_DATA: NavData[] = [
     href: "/blog",
     text: "Blog",
   },
+  {
+    id: "ABOUT",
+    href: "/about",
+    text: "About",
+  },
 ];
 
 export const RESUME_LINK =
