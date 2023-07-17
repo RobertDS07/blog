@@ -1,0 +1,158 @@
+---
+import { format } from "date-fns";
+
+import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
+
+import Icon from "@ui/atoms/Icon/Icon";
+
+import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia";
+
+import { WORK_CONTENT, EXPERIENCES_CONTENT } from "./const";
+
+import MyProfilePicture from "/images/profile-picture/robert-damaceno.png";
+---
+
+<BaseLayout
+  pageTitle="About"
+  selectedNavLink="ABOUT"
+  meta={{
+    description: "",
+  }}
+>
+  <div class="flex flex-col gap-6 pb-8 pt-4">
+    <section class="flex flex-col gap-4">
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-2xl font-extralight uppercase tracking-wider">
+          Robert Damaceno
+        </h1>
+
+        <h2 class="font-extralight uppercase tracking-wide">
+          Software Engineer
+        </h2>
+      </div>
+
+      <div class="flex flex-col items-center gap-2">
+        <img
+          src={MyProfilePicture}
+          alt="My photo (Robert)"
+          class="h-40 w-40 rounded-3xl shadow-md shadow-purple-main"
+        />
+
+        <SocialMedia orientation="HORIZONTAL" fill="white" />
+      </div>
+
+      <p class="text-sm">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.
+        Aliquam in hendrerit urna. <span class="text-red-400"
+          >Pellentesque sit amet sapien fringilla</span
+        >, mattis ligula consectetur, ultrices mauris.
+
+        <br /><br />
+
+        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
+        auctor ornare leo, non suscipit magna interdum eu. Curabitur
+        pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque
+        commodo lacus at sodales sodales. <span class="text-red-400"
+          >Quisque sagittis orci ut diam condimentum, vel euismod erat placerat</span
+        >. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem
+        orci, mattis non efficitur id, ultricies vel nibh.
+
+        <br /><br />
+
+        <span class="text-red-400"
+          >Sed volutpat lacus vitae gravida viverra. Fusce vel tempor elit</span
+        >. Proin tempus, magna id scelerisque vestibulum, nulla ex pharetra
+        sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum,
+        vehicula ac tortor vel, egestas ullamcorper dui. Curabitur at risus
+        sodales, tristique est id, euismod justo. Mauris nec leo non libero
+        sodales lobortis. Quisque a neque pretium, dictum tellus vitae, euismod
+        neque. Nulla facilisi. <span class="text-red-400"
+          >Phasellus ultricies dignissim nibh ut cursus</span
+        >. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean
+        at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex
+        feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna.
+
+        <br /><br />
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
+        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus
+        neque. Nulla facilisi. <span class="text-red-400"
+          >Phasellus ultricies dignissim nibh ut cursus. Nam ante fermentum sit
+          amet</span
+        >. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci
+        ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros,
+        eget tempus orci facilisis id.
+      </p>
+    </section>
+
+    <div class="flex justify-between py-4 text-sm font-semibold">
+      <p class="text-left">
+        <span class="text-white-500">Based in</span><br />
+        Porto Alegre
+      </p>
+
+      <p class="text-center">
+        <span class="text-white-500">Experience</span><br />
+        +4 years
+      </p>
+
+      <p class="text-right">
+        <span class="text-white-500">Date of birth</span><br />
+        31/01/2002
+      </p>
+    </div>
+
+    <section class="flex flex-col gap-6">
+      <h1 class="text-2xl font-extralight uppercase tracking-wider">Work</h1>
+
+      {
+        WORK_CONTENT.map((content) => (
+          <article class="flex flex-col gap-2">
+            <p class="text-xs font-light text-gray-400">
+              {format(content.startedAt, "MMM yyyy")} -{" "}
+              {format(content.exitedAt, "MMM yyyy")}
+            </p>
+
+            <h2 class="font-semibold">{content.companyName}</h2>
+
+            <h3 class="text-xs font-light text-gray-400">
+              {content.position} - {content.technologiesUsed.join(", ")}.
+            </h3>
+
+            <h4 class="text-xs text-gray-400">{content.overview}</h4>
+          </article>
+        ))
+      }
+    </section>
+
+    <div class="flex justify-between py-4">
+      <Icon type="nest" class="text-red-400" />
+      <Icon type="react" class="text-red-400" />
+      <Icon type="tailwind" class="text-red-400" />
+      <Icon type="typescript" class="text-red-400" />
+    </div>
+
+    <section class="flex flex-col gap-6">
+      <h1 class="text-2xl font-extralight uppercase tracking-wider">
+        Experiences
+      </h1>
+
+      {
+        EXPERIENCES_CONTENT.map((content) => (
+          <article class="flex flex-col gap-1">
+            <h2 class="font-semibold">{content.projectName}</h2>
+
+            <h3 class="text-xs font-light text-gray-400">
+              {content.technologiesUsed.join(", ")}
+            </h3>
+
+            <h4 class="text-xs text-gray-400">{content.overview}</h4>
+          </article>
+        ))
+      }
+    </section>
+  </div>
+</BaseLayout>
