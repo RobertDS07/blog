@@ -1,12 +1,13 @@
 import Icon from "@ui/atoms/Icon/Icon";
 
 import type Props from "./socialMedia.interface";
+import createWrapperClass from "./socialMedia.styles";
 
-const SocialMedia = ({ orientation = "VERTICAL" }: Props) => {
-  const isVertical = orientation === "VERTICAL";
+const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {
+  const wrapperClass = createWrapperClass({ fill, orientation });
 
   return (
-    <div class={`flex gap-6  ${isVertical ? "flex-col" : "flex-row"}`}>
+    <div class={wrapperClass}>
       <a
         target="_blank"
         href="https://github.com/RobertDS07"
@@ -32,6 +33,13 @@ const SocialMedia = ({ orientation = "VERTICAL" }: Props) => {
         title="Link to my twitter"
       >
         <Icon type="twitter" />
+      </a>
+
+      <a
+        href="mailto:robertdamacenobob@gmail.com"
+        title="Link to send me a email"
+      >
+        <Icon type="mailIcon" />
       </a>
     </div>
   );
