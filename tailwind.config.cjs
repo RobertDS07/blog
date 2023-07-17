@@ -20,6 +20,9 @@ module.exports = {
           50: "#F5EAEA",
           500: "#D0CDCD",
         },
+        red: {
+          400: "#E45F5F",
+        },
       },
       screens: {
         xs: "476px",
@@ -38,9 +41,9 @@ module.exports = {
         sm: "0 0px 5px var(--tw-shadow-color)",
       },
       zIndex: {
-        "modal-backdrop": 1040,
-        modal: 1050,
-        "hiddeable-navbar": 1041,
+        "modal-backdrop": "1040",
+        modal: "1050",
+        "hiddeable-navbar": "1041",
       },
     },
   },
