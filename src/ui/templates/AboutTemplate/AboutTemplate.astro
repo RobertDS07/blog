@@ -18,7 +18,7 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
   }}
 >
   <div class="flex flex-col gap-6 pb-8 pt-4 xl:px-11">
-    <section class="flex flex-col gap-4 lg:flex-row-reverse lg:gap-12">
+    <section class="flex flex-col gap-4 lg:flex-row-reverse xl:gap-64">
       <div class="flex flex-col gap-4">
         <div class="flex flex-col items-center gap-2 lg:hidden">
           <h1 class="text-2xl font-extralight uppercase tracking-wider">
@@ -79,7 +79,7 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
 
             <a
               class="flex items-center gap-3"
-              href={import.meta.env.PUCLIC_MY_EMAIL}
+              href={`mailto:${import.meta.env.PUCLIC_MY_EMAIL}`}
               title="Link to send me a email"
             >
               <Icon type="mailIcon" />
