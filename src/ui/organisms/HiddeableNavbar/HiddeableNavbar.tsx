@@ -63,7 +63,7 @@ const HiddleableNavbar = ({ selectedLink }: Props) => {
             </Button>
           </div>
 
-          <div class="absolute bottom-10 flex w-3/4 justify-center">
+          <div class="absolute bottom-10 flex justify-center">
             <SocialMedia orientation="HORIZONTAL" />
           </div>
         </nav>
