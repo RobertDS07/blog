@@ -35,7 +35,10 @@ const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {
         <Icon type="twitter" />
       </a>
 
-      <a href={import.meta.env.PUCLIC_MY_EMAIL} title="Link to send me a email">
+      <a
+        href={`mailto:${import.meta.env.PUCLIC_MY_EMAIL}`}
+        title="Link to send me a email"
+      >
         <Icon type="mailIcon" />
       </a>
     </div>
