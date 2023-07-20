@@ -41,7 +41,7 @@ const ogImagePath =
   </head>
 
   <body
-    class="relative mx-auto h-screen max-w-[1800px] px-8 pb-5 pt-10 xs:px-16"
+    class="relative mx-auto min-h-screen max-w-[1800px] px-8 pb-5 pt-10 xs:px-16"
   >
     <div class="relative flex justify-end">
       <div class="block md:hidden">
@@ -59,7 +59,10 @@ const ogImagePath =
         class="pointer-events-none absolute left-0 top-0 flex flex-col gap-6"
       >
         <a href="/" class="pointer-events-auto">
-          <Icon type="blogIcon" class="-ml-2 h-16 w-16 xl:hidden" />
+          <Icon
+            type="blogIcon"
+            class="-ml-2 h-10 w-10 lg:h-16 lg:w-16 xl:hidden"
+          />
         </a>
 
         <Vector class="hidden xl:block" />
