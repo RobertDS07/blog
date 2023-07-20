@@ -10,7 +10,7 @@ const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {
     <div class={wrapperClass}>
       <a
         target="_blank"
-        href="https://github.com/RobertDS07"
+        href={import.meta.env.PUCLIC_MY_GITHUB_URL}
         rel="noopener noreferrer"
         title="Link to my Github"
       >
@@ -19,7 +19,7 @@ const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {
 
       <a
         target="_blank"
-        href="https://www.linkedin.com/in/robert-d-262b0a129/"
+        href={import.meta.env.PUCLIC_MY_LINKEDIN_URL}
         rel="noopener noreferrer"
         title="Link to my linkedin"
       >
@@ -28,17 +28,14 @@ const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {
 
       <a
         target="_blank"
-        href="https://twitter.com/bugextreme1"
+        href={import.meta.env.PUCLIC_MY_TWITTER_URL}
         rel="noopener noreferrer"
         title="Link to my twitter"
       >
         <Icon type="twitter" />
       </a>
 
-      <a
-        href="mailto:robertdamacenobob@gmail.com"
-        title="Link to send me a email"
-      >
+      <a href={import.meta.env.PUCLIC_MY_EMAIL} title="Link to send me a email">
         <Icon type="mailIcon" />
       </a>
     </div>
