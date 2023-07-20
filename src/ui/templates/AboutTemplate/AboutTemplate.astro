@@ -5,11 +5,9 @@ import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
 
 import Icon from "@ui/atoms/Icon/Icon";
 
-import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia";
-
 import { WORK_CONTENT, EXPERIENCES_CONTENT } from "./const";
 
-import MyProfilePicture from "/images/profile-picture/robert-damaceno.png";
+import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.png";
 ---
 
 <BaseLayout
@@ -19,76 +17,177 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno.png";
     description: "",
   }}
 >
-  <div class="flex flex-col gap-6 pb-8 pt-4">
-    <section class="flex flex-col gap-4">
-      <div class="flex flex-col items-center gap-2">
-        <h1 class="text-2xl font-extralight uppercase tracking-wider">
-          Robert Damaceno
-        </h1>
+  <div class="flex flex-col gap-6 pb-8 pt-4 xl:px-11">
+    <section class="flex flex-col gap-4 lg:flex-row-reverse lg:gap-12">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col items-center gap-2 lg:hidden">
+          <h1 class="text-2xl font-extralight uppercase tracking-wider">
+            Robert Damaceno
+          </h1>
 
-        <h2 class="font-extralight uppercase tracking-wide">
-          Software Engineer
-        </h2>
+          <h2 class="font-extralight uppercase tracking-wide">
+            Software Engineer
+          </h2>
+        </div>
+
+        <div class="flex flex-col items-center gap-6 lg:items-start">
+          <img
+            src={MyProfilePicture}
+            alt="My photo (Robert)"
+            class="h-40 w-40 rounded-3xl object-cover object-top shadow-md shadow-purple-main lg:h-64 lg:min-w-64"
+          />
+
+          <div class="flex gap-6 text-white-50 lg:flex-col lg:gap-4">
+            <a
+              class="flex items-center gap-3"
+              target="_blank"
+              href="https://github.com/RobertDS07"
+              rel="noopener noreferrer"
+              title="Link to my Github"
+            >
+              <Icon type="github" />
+              <span class="hidden lg:block"
+                >Follow on <span class="text-red-400">GitHub</span></span
+              >
+            </a>
+
+            <a
+              class="flex items-center gap-3"
+              target="_blank"
+              href="https://www.linkedin.com/in/robert-d-262b0a129/"
+              rel="noopener noreferrer"
+              title="Link to my linkedin"
+            >
+              <Icon type="linkedin" />
+              <span class="hidden lg:block"
+                >Follow on <span class="text-red-400">Linkedin</span></span
+              >
+            </a>
+
+            <a
+              class="flex items-center gap-3"
+              target="_blank"
+              href="https://twitter.com/bugextreme1"
+              rel="noopener noreferrer"
+              title="Link to my twitter"
+            >
+              <Icon type="twitter" />
+              <span class="hidden lg:block"
+                >Follow on <span class="text-red-400">Twitter</span></span
+              >
+            </a>
+
+            <a
+              class="flex items-center gap-3"
+              href="mailto:robertdamacenobob@gmail.com"
+              title="Link to send me a email"
+            >
+              <Icon type="mailIcon" />
+              <span class="hidden text-red-400 underline lg:block"
+                >robertdamacenobob@gmail.com</span
+              ></a
+            >
+          </div>
+        </div>
       </div>
 
-      <div class="flex flex-col items-center gap-2">
-        <img
-          src={MyProfilePicture}
-          alt="My photo (Robert)"
-          class="h-40 w-40 rounded-3xl shadow-md shadow-purple-main"
-        />
+      <div class="flex flex-col gap-2">
+        <div class="hidden flex-col lg:flex">
+          <h1
+            class="text-2xl font-extralight uppercase tracking-wider lg:text-3xl"
+          >
+            Robert Damaceno
+          </h1>
 
-        <SocialMedia orientation="HORIZONTAL" fill="white" />
+          <h2 class="font-extralight uppercase tracking-wide">
+            Software Engineer
+          </h2>
+        </div>
+
+        <p class="text-sm">
+          Olá, tudo bem? É um prazer tê-lo(a) aqui! Meu nome é <span
+            class="text-red-400">Robert</span
+          >, como você já deve ter percebido (haha), e sou um <span
+            class="text-red-400">desenvolvedor Full Stack</span
+          >. Desde que comecei no mundo da programação, cada dia que passa me
+          apaixono ainda mais por esta área. Iniciei minha jornada no ensino
+          médio, em fevereiro de 2020, e desde então venho <span
+            class="text-red-400"
+            >crescendo tanto profissionalmente quanto pessoalmente.</span
+          >
+
+          <br /><br />
+
+          Ao longo da minha carreira, tive diversas oportunidades que me
+          desafiaram a <span class="text-red-400"
+            >aprender e me desenvolver continuamente</span
+          >. Desde o meu primeiro emprego, fui incentivado a expandir meus
+          conhecimentos, passando de <span class="text-red-400"
+            >JavaScript e React</span
+          > para trabalhar com <span class="text-red-400">Python e Dart</span>.
+          No meu segundo emprego, explorei o universo do <span
+            class="text-red-400">React Native</span
+          >, que, apesar de semelhante ao React, também apresenta suas
+          peculiaridades. Em ambas oportunidades, consegui desempenhar um <span
+            class="text-red-400"
+            >ótimo trabalho, entregando resultados de qualidade.</span
+          >
+
+          <br /><br />
+
+          Em meu terceiro emprego, participei da arquitetura de um novo produto
+          em <span class="text-red-400">colaboração com colegas</span>,
+          unificando nossos principais produtos em um só. Contribuí na
+          arquitetura do banco de dados e na migração de uma API monolítica para
+          uma arquitetura modular de monolito. Além disso, aprimorei a estrutura
+          de engenharia da empresa, introduzindo práticas de <span
+            class="text-red-400">code review e melhorias nos processos.</span
+          >
+
+          <br /><br />
+
+          Ao longo de toda a minha jornada na programação, trabalhei com
+          diversas tecnologias, como JavaScript, <span class="text-red-400"
+            >TypeScript</span
+          >, Python, <span class="text-red-400">NodeJs</span>,
+          <span class="text-red-400">ReactJs</span>, React Native, <span
+            class="text-red-400">NextJs</span
+          >, <span class="text-red-400">NestJs</span>, Tailwindcss, Material-UI,
+          Angular, entre outras.
+
+          <br /><br />
+
+          Além da minha <span class="text-red-400">paixão pela programação</span
+          >, tenho uma vida além das telas. Apesar de às vezes esquecer disso (o
+          que me arrependo muito), gosto de xadrez, <span class="text-red-400"
+            >CS:GO</span
+          >, skate e, principalmente, curtir a vida com meus <span
+            class="text-red-400">amigos e família.</span
+          >
+
+          <br /><br />
+
+          Aqui neste espaço, pretendo <span class="text-red-400"
+            >compartilhar minhas experiências, conhecimentos e aprendizados na
+            área de desenvolvimento Full Stack</span
+          >. Valorizo a cultura e a qualidade da engenharia nos ambientes de
+          trabalho e acredito que o compartilhamento de ideias e experiências é
+          fundamental para o <span class="text-red-400"
+            >crescimento coletivo.</span
+          >
+
+          <br /><br />
+
+          Espero que você se sinta <span class="text-red-400">inspirado(a)</span
+          > a aprender e crescer junto comigo nesta jornada tecnológica. Seja bem-vindo(a)
+          e vamos explorar juntos o <span class="text-red-400"
+            >fascinante mundo da programação!</span
+          >
+        </p>
       </div>
-
-      <p class="text-sm">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.
-        Aliquam in hendrerit urna. <span class="text-red-400"
-          >Pellentesque sit amet sapien fringilla</span
-        >, mattis ligula consectetur, ultrices mauris.
-
-        <br /><br />
-
-        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-        auctor ornare leo, non suscipit magna interdum eu. Curabitur
-        pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque
-        commodo lacus at sodales sodales. <span class="text-red-400"
-          >Quisque sagittis orci ut diam condimentum, vel euismod erat placerat</span
-        >. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem
-        orci, mattis non efficitur id, ultricies vel nibh.
-
-        <br /><br />
-
-        <span class="text-red-400"
-          >Sed volutpat lacus vitae gravida viverra. Fusce vel tempor elit</span
-        >. Proin tempus, magna id scelerisque vestibulum, nulla ex pharetra
-        sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum,
-        vehicula ac tortor vel, egestas ullamcorper dui. Curabitur at risus
-        sodales, tristique est id, euismod justo. Mauris nec leo non libero
-        sodales lobortis. Quisque a neque pretium, dictum tellus vitae, euismod
-        neque. Nulla facilisi. <span class="text-red-400"
-          >Phasellus ultricies dignissim nibh ut cursus</span
-        >. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean
-        at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex
-        feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna.
-
-        <br /><br />
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.
-        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-        tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus
-        neque. Nulla facilisi. <span class="text-red-400"
-          >Phasellus ultricies dignissim nibh ut cursus. Nam ante fermentum sit
-          amet</span
-        >. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci
-        ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros,
-        eget tempus orci facilisis id.
-      </p>
     </section>
 
-    <div class="flex justify-between py-4 text-sm font-semibold">
+    <div class="flex justify-between py-4 text-sm font-semibold lg:text-base">
       <p class="text-left">
         <span class="text-white-500">Based in</span><br />
         Porto Alegre
@@ -106,53 +205,67 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno.png";
     </div>
 
     <section class="flex flex-col gap-6">
-      <h1 class="text-2xl font-extralight uppercase tracking-wider">Work</h1>
+      <h1 class="text-2xl font-extralight uppercase tracking-wider lg:text-3xl">
+        Work
+      </h1>
 
-      {
-        WORK_CONTENT.map((content) => (
-          <article class="flex flex-col gap-2">
-            <p class="text-xs font-light text-gray-400">
-              {format(content.startedAt, "MMM yyyy")} -{" "}
-              {format(content.exitedAt, "MMM yyyy")}
-            </p>
+      <div
+        class="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:justify-between"
+      >
+        {
+          WORK_CONTENT.map((content) => (
+            <article class="flex flex-col gap-2 lg:w-[45%]">
+              <p class="text-xs font-light text-gray-400 lg:text-base">
+                {format(content.startedAt, "MMM yyyy")} -{" "}
+                {format(content.exitedAt, "MMM yyyy")}
+              </p>
 
-            <h2 class="font-semibold">{content.companyName}</h2>
+              <h2 class="font-semibold lg:text-lg">{content.companyName}</h2>
 
-            <h3 class="text-xs font-light text-gray-400">
-              {content.position} - {content.technologiesUsed.join(", ")}.
-            </h3>
+              <h3 class="text-xs font-light text-gray-400 lg:text-base">
+                {content.position} - {content.technologiesUsed.join(", ")}.
+              </h3>
 
-            <h4 class="text-xs text-gray-400">{content.overview}</h4>
-          </article>
-        ))
-      }
+              <h4 class="text-xs text-gray-400 lg:text-base">
+                {content.overview}
+              </h4>
+            </article>
+          ))
+        }
+      </div>
     </section>
 
     <div class="flex justify-between py-4">
-      <Icon type="nest" class="text-red-400" />
-      <Icon type="react" class="text-red-400" />
-      <Icon type="tailwind" class="text-red-400" />
-      <Icon type="typescript" class="text-red-400" />
+      <Icon type="nest" class="text-red-400 lg:h-14 lg:w-14" />
+      <Icon type="react" class="text-red-400 lg:h-14 lg:w-14" />
+      <Icon type="tailwind" class="text-red-400 lg:h-14 lg:w-14" />
+      <Icon type="typescript" class="text-red-400 lg:h-14 lg:w-14" />
     </div>
 
     <section class="flex flex-col gap-6">
-      <h1 class="text-2xl font-extralight uppercase tracking-wider">
+      <h1 class="text-2xl font-extralight uppercase tracking-wider lg:text-3xl">
         Experiences
       </h1>
 
-      {
-        EXPERIENCES_CONTENT.map((content) => (
-          <article class="flex flex-col gap-1">
-            <h2 class="font-semibold">{content.projectName}</h2>
+      <div
+        class="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:justify-between"
+      >
+        {
+          EXPERIENCES_CONTENT.map((content) => (
+            <article class="flex flex-col gap-2 lg:w-[45%]">
+              <h2 class="font-semibold lg:text-lg">{content.projectName}</h2>
 
-            <h3 class="text-xs font-light text-gray-400">
-              {content.technologiesUsed.join(", ")}
-            </h3>
+              <h3 class="text-xs font-light text-gray-400 lg:text-sm">
+                {content.technologiesUsed.join(", ")}
+              </h3>
 
-            <h4 class="text-xs text-gray-400">{content.overview}</h4>
-          </article>
-        ))
-      }
+              <h4 class="text-xs text-gray-400 lg:text-sm">
+                {content.overview}
+              </h4>
+            </article>
+          ))
+        }
+      </div>
     </section>
   </div>
 </BaseLayout>
