@@ -31,7 +31,11 @@
 
 Este projeto foi desenvolvido com o objetivo de facilitar a apresentação da minha jornada na programação e compartilhar minha trajetória com outras pessoas.
 
-O blog está hospedado na [AWS](https://aws.amazon.com/) e utiliza as actions do GitHub para CI/CD.
+O blog está hospedado na [AWS](https://aws.amazon.com/) e utiliza as actions do GitHub para CI/CD. Abaixo tem uma imagem exemplificando o fluxo de trabalho que ocorre ao entrar no meu blog.
+
+<div align="center">
+    <img src="./docs/diagrama-blog-fluxo-de-trabalho.png" alt="Image that explain the work flow that occurs when anyone enter in my blog" />
+</div>
 
 # Arquitetura
 
