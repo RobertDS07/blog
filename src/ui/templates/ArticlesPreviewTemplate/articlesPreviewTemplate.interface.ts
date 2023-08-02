@@ -1,7 +1,17 @@
-import type ArticlePreviewProps from "@ui/molecules/ArticlePreview/articlePreview.interface";
+import type ArticleCardProps from "../../molecules/ArticleCard/articleCard.interface";
 
 interface Props {
-  articles: ArticlePreviewProps[];
+  articles: Array<
+    Pick<
+      ArticleCardProps,
+      | "summary"
+      | "title"
+      | "articleSlug"
+      | "tags"
+      | "createdAt"
+      | "minutesToRead"
+    >
+  >;
 }
 
 export default Props;

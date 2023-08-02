@@ -16,6 +16,9 @@ const formattedPostsToHome: HomeTemplateProps["articles"] =
     title: post.data.title,
     summary: post.data.description,
     articleSlug: post.slug,
+    tags: post.data.tags,
+    createdAt: post.data.createdAt,
+    minutesToRead: post.data.timeToReadInMinutes,
   }));
 
 const feedbacksEntries = await getCollection("feedbacks");

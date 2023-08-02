@@ -24,13 +24,5 @@ const { articles } = Astro.props;
     </Button>
   </div>
 
-  {
-    articles.map((article) => (
-      <ArticleCard
-        summary={article.summary}
-        title={article.title}
-        articleSlug={article.articleSlug}
-      />
-    ))
-  }
+  {articles.map((article) => <ArticleCard {...article} />)}
 </section>
