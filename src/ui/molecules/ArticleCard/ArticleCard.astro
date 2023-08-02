@@ -1,16 +1,61 @@
 ---
+import { format } from "date-fns";
+
+import Icon from "@ui/atoms/Icon/Icon";
+import type { IconTypes } from "@ui/atoms/Icon/icon.interface";
+
+import RoundedTriangle from "../../../../public/svgs/rounded-triangle.svg";
 import BaseCard from "../BaseCard/BaseCard.astro";
 import type Props from "./articleCard.interface";
 
-const { summary, title, articleSlug } = Astro.props;
+const { summary, title, articleSlug, tags, createdAt, minutesToRead } =
+  Astro.props;
+
+const getIconType = (tag: Props["tags"][0]): IconTypes => {
+  switch (tag) {
+    case "git":
+      return "github";
+
+    case "react":
+      return "react";
+
+    default:
+      throw new Error("Icon not found for tag: " + tag);
+  }
+};
 ---
 
 <a href={`/blog/${articleSlug}`}>
   <BaseCard>
-    <div class="flex flex-col gap-4 text-white-50">
-      <h3 class="text-xl font-bold xs:text-2xl">{title}</h3>
+    <div class="absolute right-3 top-[-2px] flex sm:right-10">
+      {
+        tags.map((tag) => {
+          const iconType = getIconType(tag);
 
-      <p class="text-xs font-medium">{summary}</p>
+          return (
+            <div class="flex h-6 w-6 items-center justify-center sm:h-9 sm:w-9">
+              <RoundedTriangle class="absolute h-full w-full" />
+
+              <Icon
+                type={iconType}
+                class="z-10 mt-[-5px] h-4 w-4 sm:h-5 sm:w-5"
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="flex flex-col gap-4 text-white-50">
+      <div>
+        <h3 class="text-lg font-bold xs:text-2xl sm:text-xl">{title}</h3>
+
+        <p class="text-xs font-normal opacity-50">
+          {minutesToRead} min. {format(new Date(createdAt), "MMM. dd, yyyy")}
+        </p>
+      </div>
+
+      <p class="text-sm font-medium">{summary}</p>
     </div>
   </BaseCard>
 </a>
