@@ -14,8 +14,10 @@ const formattedPostsToTemplate: ArticlesPreviewTemplateProps["articles"] =
   postsSortedByCreatedAt.map((post) => ({
     title: post.data.title,
     summary: post.data.description,
-    backgroundSrc: post.data.imageUrl,
     minutesToRead: post.data.timeToReadInMinutes,
+    articleSlug: post.slug,
+    createdAt: post.data.createdAt,
+    tags: post.data.tags,
   }));
 ---
 
