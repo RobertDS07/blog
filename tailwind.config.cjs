@@ -48,6 +48,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
