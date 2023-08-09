@@ -14,7 +14,7 @@
 - [Stack](#stack)
 - [Objetivo](#objetivo)
 - [Arquitetura](#arquitetura)
-- [Geração de og:image](#geração-de-ogimages)
+- [Geração de og:image](#geração-de-ogimage)
 - [Estrutura de pastas](#estrutura-de-pastas)
 
 # Stack
