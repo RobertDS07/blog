@@ -26,7 +26,7 @@ Exato... O problema é o envio de Javascript para o Front End. As ilhas de compo
 
 Abaixo está uma imagem que ilustra alguns dos diferentes métodos de renderização.
 
-<img src="/public/images/articles/welcome/diff-methods-to-render-fe.png" alt="Foto contendo algumas das diferentes formas de renderização que existem no front-end." />
+<img src="/images/articles/welcome/diff-methods-to-render-fe.png" alt="Foto contendo algumas das diferentes formas de renderização que existem no front-end." />
 
 ### 2. Agnostico de UI
 
@@ -58,7 +58,7 @@ Dentro do diretório /src, temos uma pasta chamada content, onde estão todos os
 
 E, por último (eu juro que é o último do Astro), temos a performance, uma das coisas mais importantes para blogs. O Astro traz o pilar de zero javascript, como mencionado anteriormente. Mesmo usando bibliotecas que facilitam a criação de UIs com javascript, ainda podemos ter um desempenho muito bom. Abaixo, deixarei uma imagem disponibilizada no site do Astro.
 
-<img src="/public/images/articles/welcome/astro-performance-comparison.png" alt="Foto contendo imagem disponibilizada no site do Astro onde mostram um teste de performance onde o astro foi muito bem." />
+<img src="/images/articles/welcome/astro-performance-comparison.png" alt="Foto contendo imagem disponibilizada no site do Astro onde mostram um teste de performance onde o astro foi muito bem." />
 
 O link para ver como foram feitos os testes de performance estão [aqui](https://astro.build/blog/2023-web-framework-performance-report/).
 
@@ -70,7 +70,7 @@ Primeiro, uma breve apresentação do Solid para vocês. O Solid é um framework
 
 Apesar de ser tão novo, ele já fez um grande impacto, com uma base sólida de fãs e contribuidores. Tanto é que o Google, por meio do programa [Aurora](https://developer.chrome.com/blog/introducing-aurora/), concedeu um financiamento de $30,000 para o Solid. E por que ele tem chamado tanta atenção? Principalmente por sua performance.
 
-<img src="/public/images/articles/welcome/solid-performance-comparison.png" alt="Foto contendo imagem disponibilizada no site do SolidJs onde mostram um teste de performance onde o Solid foi muito bem." />
+<img src="/images/articles/welcome/solid-performance-comparison.png" alt="Foto contendo imagem disponibilizada no site do SolidJs onde mostram um teste de performance onde o Solid foi muito bem." />
 
 O link para ver como foram feitos os testes de performance estão [aqui](https://github.com/krausest/js-framework-benchmark).
 
@@ -108,7 +108,7 @@ O Tailwind traz uma série de classes utilitárias que facilitam muito a criaç�
 
 Para ilustrar, aqui está um exemplo:
 
-<img src="/public/images/articles/welcome/tailwind-example.png" alt="Exemplo de como o bundle do tailwind é feito, removendo classes que não utilizamos." />
+<img src="/images/articles/welcome/tailwind-example.png" alt="Exemplo de como o bundle do tailwind é feito, removendo classes que não utilizamos." />
 
 ## [MDX](https://mdxjs.com/)
 
@@ -128,37 +128,37 @@ Essa metodologia divide os componentes em cinco tipos: `Atoms`, `Molecules`, `Or
 
 Os átomos são, como na vida real, os componentes mais elementares da nossa UI. São os elementos HTML individuais, como botões, inputs e links. São partes da nossa UI que podem funcionar de forma independente, sendo a menor granularidade possível. Não é possível dividir um átomo em partes menores.
 
-<img src="../../../public/images/articles/welcome/button.png" alt="Foto de um botão exemplificando o que seria um átomo no Atomic Design." />
+<img src="/images/articles/welcome/button.png" alt="Foto de um botão exemplificando o que seria um átomo no Atomic Design." />
 
 ## Molecules
 
 As moléculas são junções de átomos que, quando combinadas, têm um propósito maior. Um exemplo disso é o componente ArticleCard, utilizado aqui no meu site. Ele combina diferentes elementos HTML para formar um componente maior, que por si só expressa algo mais complexo. Se desmembrássemos todos os átomos que compõem essa molécula, ela perderia seu sentido.
 
-<img src="../../../public/images/articles/welcome/article-card.png" alt="Foto de um card exemplificando o que seria uma molécula no Atomic Design." />
+<img src="/images/articles/welcome/article-card.png" alt="Foto de um card exemplificando o que seria uma molécula no Atomic Design." />
 
 ## Organisms
 
 Os organismos são partes mais complexas da nossa UI. Eles normalmente são compostos por moléculas, átomos ou até outros organismos. Eles contam uma história completa por si só. Mesmo se retirássemos todo o restante da UI e deixássemos apenas um organismo, ainda assim conseguiríamos entender sua função. Um exemplo é a seção de posts que temos aqui na página inicial.
 
-<img src="../../../public/images/articles/welcome/article-section.png" alt="Foto de uma seção do meu site exemplificando o que seria um organismo no Atomic Design." />
+<img src="/images/articles/welcome/article-section.png" alt="Foto de uma seção do meu site exemplificando o que seria um organismo no Atomic Design." />
 
 ## Templates
 
 Os templates são um reflexo do que o usuário verá, aguardando apenas os dados reais para serem renderizados. Eles representam uma página completa, mas sem os dados reais. Eles são a UI completa, aguardando os dados para serem montados. Essa separação da lógica do componente do restante da UI faz sentido em projetos maiores e mais complexos. Embora ainda não tenha testado essa metodologia em um projeto dinâmico, para um site estático como este, ela se encaixou bem.
 
-<img src="../../../public/images/articles/welcome/complete-example-of-atomic-design.png" alt="Foto de todas as etapas do atomic design, exemplificando como vamos de um átomo até uma página completa." />
+<img src="/images/articles/welcome/complete-example-of-atomic-design.png" width="900px" alt="Foto de todas as etapas do atomic design, exemplificando como vamos de um átomo até uma página completa." />
 
 ## Pages
 
 As páginas representam os templates com os dados reais. São as páginas completas que o usuário vê. Abaixo, uma imagem exemplifica uma página.
 
-<img src="../../../public/images/articles/welcome/template-in-use-example.png" alt="Foto de uma página deste site exemplificando como um template ficaria com dados reais." />
+<img src="/images/articles/welcome/template-in-use-example.png" alt="Foto de uma página deste site exemplificando como um template ficaria com dados reais." />
 
 ## Layouts
 
 Por último, menciono algo que não abordei antes, pois é uma adição específica que fiz. São os layouts, que criei para guardar a parte da UI presente em todos os templates. No nosso caso, isso inclui a parte superior do site, como pode ser visto na imagem abaixo.
 
-<img src="../../../public/images/articles/welcome/layout-example.png" alt="Foto onde mostro uma parte adicional não presente no Atomic Design que seriam os layouts, aqui nesta foto demonstrei o uso dele." />
+<img src="/images/articles/welcome/layout-example.png" alt="Foto onde mostro uma parte adicional não presente no Atomic Design que seriam os layouts, aqui nesta foto demonstrei o uso dele." />
 
 # Infra
 
@@ -172,7 +172,7 @@ Por último, vale a pena mencionar como este site está sendo hospedado e como c
 
 Abaixo, um diagrama que ilustra esse fluxo:
 
-<img src="../../../public/images/articles/welcome/diagrama-blog-fluxo-de-trabalho.png" alt="Foto de um diagrama de fluxo de trabalho mostrando todas as etapas de como funciona para renderizar uma página deste site no seu navegador." />
+<img src="/images/articles/welcome/diagrama-blog-fluxo-de-trabalho.png" alt="Foto de um diagrama de fluxo de trabalho mostrando todas as etapas de como funciona para renderizar uma página deste site no seu navegador." />
 
 Para controle de CI/CD, utilizo as [GitHub Actions](https://github.com/features/actions). Você pode conferir o arquivo `.github/workflows/deploy.yaml` no repositório deste site.
 
