@@ -13,11 +13,12 @@ const { summary, title, articleSlug, tags, createdAt, minutesToRead } =
 
 const getIconType = (tag: Props["tags"][0]): IconTypes => {
   switch (tag) {
-    case "git":
-      return "github";
-
-    case "react":
-      return "react";
+    case "astro":
+      return "astro";
+    case "aws":
+      return "aws";
+    case "solid":
+      return "solid";
 
     default:
       throw new Error("Icon not found for tag: " + tag);
