@@ -15,7 +15,10 @@ export type IconTypes =
   | "nest"
   | "tailwind"
   | "typescript"
-  | "react";
+  | "react"
+  | "astro"
+  | "solid"
+  | "aws";
 
 interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
   type: IconTypes;
