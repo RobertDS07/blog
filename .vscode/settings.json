@@ -1,5 +1,6 @@
 {
   "prettier.documentSelectors": ["**/*.astro"],
+  "mdx.experimentalLanguageServer": true,
   "eslint.validate": ["astro", "typescript"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
