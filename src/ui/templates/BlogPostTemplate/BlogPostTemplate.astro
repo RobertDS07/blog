@@ -61,15 +61,13 @@ const { data, slug } = Astro.props;
       </div>
     </div>
 
-    <h1
-      class="text-center text-3xl font-bold text-white-0 md:text-4xl lg:text-5xl"
-    >
+    <h1 class="text-center text-3xl font-bold text-white-0">
       {data.title}
     </h1>
 
     <img src={data.imageUrl} class="h-max max-h-96 w-max self-center" />
 
-    <article class="prose prose-invert">
+    <article class="prose prose-invert max-w-none xl:px-3">
       <slot />
     </article>
   </div>
