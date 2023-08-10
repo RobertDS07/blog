@@ -34,6 +34,7 @@ const createClass = cva(
         text: [],
       },
       size: {
+        xs: ["px-2", "py-1", "text-xs"],
         sm: ["px-2", "py-1", "text-base"],
         md: [],
       },
