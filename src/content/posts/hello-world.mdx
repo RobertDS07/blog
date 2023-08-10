@@ -2,13 +2,22 @@
 title: 'Bem-vindo'
 imageUrl: '/images/articles/welcome/cover.jpg'
 description: 'Contando um pouco de como foi a construção deste site, quais tecnologias utilizei, porquê escolhi elas e muito mais.'
-timeToReadInMinutes: 8
+timeToReadInMinutes: 9
 tags: ['astro', 'solid', 'aws']
 createdAt: '2023/08/09'
 ---
 Olá e bem-vindo ao meu site! É um prazer tê-lo aqui. Neste espaço, compartilharei uma variedade de tópicos que me interessam, abrangendo não apenas programação, mas também saúde, vida e outros assuntos. Este site também oferece uma oportunidade de me conhecer melhor. Além disso, aguardam duas funcionalidades futuras: uma linha do tempo da minha jornada na programação e uma seção de links úteis.
 
 Vamos agora ao tema deste post, que é a criação deste próprio site que você está agora. Nesta postagem, compartilharei as decisões que tomei, as tecnologias que escolhi, as metodologias que apliquei e outros detalhes interessantes. Espero que você aproveite este conteúdo e que eu possa ensinar algo novo ou mostrar algo que você ainda não sabia.
+
+# Sumário
+
+1. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+1. [Arquitetura](#arquitetura)
+1. [Infra](#infra)
+1. [Conslusão](#conclusão)
+
+---
 
 # Tecnologias Utilizadas
 
@@ -114,6 +123,8 @@ Para ilustrar, aqui está um exemplo:
 
 O MDX é possivelmente conhecido por muitos. Ele é uma linguagem de marcação semelhante ao MD (Markdown), mas também permite o uso de componentes JSX. Normalmente, é usada para criar posts de blogs, como este.
 
+---
+
 # Arquitetura
 
 Para alguns iniciantes, pode parecer estranho ouvir a palavra "arquitetura" em um projeto front-end. No entanto, existem muitos tipos de arquiteturas a serem seguidas quando se tem a liberdade de escolher. Sim, há momentos em que o framework escolhido determina a regra a ser seguida, o que muitas vezes é até melhor. Por exemplo, no React, muitas pessoas podem achar estranho misturar estilização, lógica do componente e o próprio componente em um só lugar. Isso pode resultar em componentes confusos e complexos.
@@ -160,6 +171,8 @@ Por último, menciono algo que não abordei antes, pois é uma adição específ
 
 <img src="/images/articles/welcome/layout-example.png" alt="Foto onde mostro uma parte adicional não presente no Atomic Design que seriam os layouts, aqui nesta foto demonstrei o uso dele." />
 
+---
+
 # Infra
 
 Por último, vale a pena mencionar como este site está sendo hospedado e como cuido do seu CI/CD.
@@ -175,6 +188,8 @@ Abaixo, um diagrama que ilustra esse fluxo:
 <img src="/images/articles/welcome/diagrama-blog-fluxo-de-trabalho.png" alt="Foto de um diagrama de fluxo de trabalho mostrando todas as etapas de como funciona para renderizar uma página deste site no seu navegador." />
 
 Para controle de CI/CD, utilizo as [GitHub Actions](https://github.com/features/actions). Você pode conferir o arquivo `.github/workflows/deploy.yaml` no repositório deste site.
+
+---
 
 # Conclusão
 
