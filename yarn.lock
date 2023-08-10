@@ -5529,10 +5529,10 @@ socks@^2.7.1:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
 
-solid-js@^1.7.5:
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.7.5.tgz#2ef7834c6c8eef9d1b46c25b1c51da4c67492a13"
-  integrity sha512-GfJ8na1e9FG1oAF5xC24BM+ATLym0sfH+ZblkbBFpueYdq3fWAoA5Ve+jGeIeLI7jmMGfa0rUaKruszNm2sH8w==
+solid-js@^1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.7.7.tgz#c8b13ce5429983eae10010e11886432588bb4b5e"
+  integrity sha512-SPdYVke/Z6Za24PBTbULyQYPrhGO1ZbPany76atO2zF2dmYn2pCotbsw1JtlgWnr9dK2JbwPGnA3ODTGPLhZNw==
   dependencies:
     csstype "^3.1.0"
     seroval "^0.5.0"
