@@ -107,10 +107,10 @@
     sitemap "^7.1.1"
     zod "^3.17.3"
 
-"@astrojs/solid-js@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/solid-js/-/solid-js-2.1.1.tgz#5779ad25ed559a2180704458c997cac8675bd0ab"
-  integrity sha512-gRz9+d+c18HTRd5yf8TNjel/3kY9cdCPKjKucK3XLscniAjnWBd3/AIx4Rc9S/02Ici3kYhKH9se/D1Ry6nXIg==
+"@astrojs/solid-js@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/solid-js/-/solid-js-2.2.0.tgz#c0e10726990884c103d482194deb27335419bf7c"
+  integrity sha512-yZcpwGnPnFsF74+9ppXBy/h3rAbrhNuRCz/pTck2KWufwsmn5SwUWTBWLGgSqK3dhaw56Mp2MMJQuLY3Nc5VMw==
   dependencies:
     babel-preset-solid "^1.4.2"
     vitefu "^0.2.4"
