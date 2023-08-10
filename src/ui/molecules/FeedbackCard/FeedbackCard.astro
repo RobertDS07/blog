@@ -1,11 +1,40 @@
 ---
-import BaseCard from "../BaseCard/BaseCard.astro";
+import Button from "@ui/atoms/Button/Button";
+
 import type Props from "./feedbackCard.interface";
 
-const { feedback, name, photoSrc, socialMediaData } = Astro.props;
+const {
+  feedback,
+  name,
+  photoSrc,
+  socialMediaData,
+  id,
+  activeShowMoreButton = false,
+  isToTruncate = false,
+} = Astro.props;
+
+const getFeedback = () => {
+  const REGEX_TO_REMOVE_LAST_SPACE = /\s+$/;
+  const MAX_CHARS_TO_TRUNCATE = 220;
+
+  const needTruncate = feedback.length > MAX_CHARS_TO_TRUNCATE && isToTruncate;
+
+  if (!needTruncate) return feedback;
+
+  const truncatedFeedback = `${feedback
+    .slice(0, MAX_CHARS_TO_TRUNCATE)
+    .replace(REGEX_TO_REMOVE_LAST_SPACE, "")}...`;
+
+  return truncatedFeedback;
+};
 ---
 
-<BaseCard>
+<article
+  id={id}
+  class="relative min-h-48 overflow-hidden rounded border-2 border-white-500 px-10 py-5"
+>
+  <span class="absolute left-0 top-0 h-full w-2 bg-purple-main"></span>
+
   <div class="flex flex-row gap-4">
     <img
       src={photoSrc}
@@ -27,7 +56,21 @@ const { feedback, name, photoSrc, socialMediaData } = Astro.props;
         </a>
       </h3>
 
-      <p class="text-xs font-medium">{feedback}</p>
+      <p class="whitespace-break-spaces text-xs font-medium">{getFeedback()}</p>
+
+      {
+        activeShowMoreButton && (
+          <Button
+            as="a"
+            size="xs"
+            class="mt-2"
+            variant="outline"
+            linkProps={{ href: `/feedbacks#${name}` }}
+          >
+            Veja mais
+          </Button>
+        )
+      }
     </div>
   </div>
-</BaseCard>
+</article>
