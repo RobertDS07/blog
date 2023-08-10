@@ -19,6 +19,10 @@ const { articles } = Astro.props;
   <div
     class="flex flex-wrap justify-center gap-14 py-11 xs:gap-16 md:gap-28 2xl:px-16 [&>*]:w-full xl:[&>*]:w-3/5"
   >
-    {articles.map((article) => <ArticleCard {...article} />)}
+    {
+      articles.map((article) => (
+        <ArticleCard activeShowMoreButton={true} {...article} />
+      ))
+    }
   </div>
 </BaseLayout>
