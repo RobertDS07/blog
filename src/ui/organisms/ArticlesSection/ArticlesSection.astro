@@ -24,5 +24,13 @@ const { articles } = Astro.props;
     </Button>
   </div>
 
-  {articles.map((article) => <ArticleCard {...article} />)}
+  {
+    articles.map((article) => (
+      <ArticleCard
+        isToTruncate={true}
+        activeShowMoreButton={true}
+        {...article}
+      />
+    ))
+  }
 </section>

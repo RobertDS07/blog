@@ -31,6 +31,8 @@ const { feedbacks } = Astro.props;
   {
     feedbacks.map((feedback) => (
       <FeedbackCard
+        isToTruncate={true}
+        activeShowMoreButton={true}
         name={feedback.name}
         feedback={feedback.feedback}
         photoSrc={feedback.photoSrc}
