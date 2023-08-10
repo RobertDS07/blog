@@ -1,15 +1,38 @@
 ---
 import { format } from "date-fns";
 
+import Button from "@ui/atoms/Button/Button";
 import Icon from "@ui/atoms/Icon/Icon";
 import type { IconTypes } from "@ui/atoms/Icon/icon.interface";
 
 import RoundedTriangle from "../../../../public/svgs/rounded-triangle.svg";
-import BaseCard from "../BaseCard/BaseCard.astro";
 import type Props from "./articleCard.interface";
 
-const { summary, title, articleSlug, tags, createdAt, minutesToRead } =
-  Astro.props;
+const {
+  summary,
+  title,
+  articleSlug,
+  tags,
+  createdAt,
+  minutesToRead,
+  activeShowMoreButton,
+  isToTruncate,
+} = Astro.props;
+
+const getSummary = () => {
+  const REGEX_TO_REMOVE_LAST_SPACE = /\s+$/;
+  const MAX_CHARS_TO_TRUNCATE = 120;
+
+  const needTruncate = summary.length > MAX_CHARS_TO_TRUNCATE && isToTruncate;
+
+  if (!needTruncate) return summary;
+
+  const truncatedSummary = `${summary
+    .slice(0, 119)
+    .replace(REGEX_TO_REMOVE_LAST_SPACE, "")}...`;
+
+  return truncatedSummary;
+};
 
 const getIconType = (tag: Props["tags"][0]): IconTypes => {
   switch (tag) {
@@ -26,37 +49,52 @@ const getIconType = (tag: Props["tags"][0]): IconTypes => {
 };
 ---
 
-<a href={`/blog/${articleSlug}`}>
-  <BaseCard>
-    <div class="absolute right-3 top-[-2px] flex sm:right-10">
-      {
-        tags.map((tag) => {
-          const iconType = getIconType(tag);
+<article
+  class="relative min-h-48 overflow-hidden rounded border-2 border-white-500 px-10 py-5"
+>
+  <span class="absolute left-0 top-0 h-full w-2 bg-purple-main"></span>
 
-          return (
-            <div class="flex h-6 w-6 items-center justify-center sm:h-9 sm:w-9">
-              <RoundedTriangle class="absolute h-full w-full" />
+  <div class="absolute right-3 top-[-2px] flex sm:right-10">
+    {
+      tags.map((tag) => {
+        const iconType = getIconType(tag);
 
-              <Icon
-                type={iconType}
-                class="z-10 mt-[-5px] h-4 w-4 sm:h-5 sm:w-5"
-              />
-            </div>
-          );
-        })
-      }
+        return (
+          <div class="flex h-6 w-6 items-center justify-center sm:h-9 sm:w-9">
+            <RoundedTriangle class="absolute h-full w-full" />
+
+            <Icon
+              type={iconType}
+              class="z-10 mt-[-5px] h-4 w-4 sm:h-5 sm:w-5"
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <div class="flex flex-col gap-4 text-white-50">
+    <div>
+      <h3 class="text-lg font-bold xs:text-2xl sm:text-xl">{title}</h3>
+
+      <p class="text-xs font-normal opacity-50">
+        {minutesToRead} min. {format(new Date(createdAt), "MMM. dd, yyyy")}
+      </p>
     </div>
 
-    <div class="flex flex-col gap-4 text-white-50">
-      <div>
-        <h3 class="text-lg font-bold xs:text-2xl sm:text-xl">{title}</h3>
+    <p class="text-sm font-medium">{getSummary()}</p>
 
-        <p class="text-xs font-normal opacity-50">
-          {minutesToRead} min. {format(new Date(createdAt), "MMM. dd, yyyy")}
-        </p>
-      </div>
-
-      <p class="text-sm font-medium">{summary}</p>
-    </div>
-  </BaseCard>
-</a>
+    {
+      activeShowMoreButton && (
+        <Button
+          as="a"
+          size="xs"
+          variant="outline"
+          linkProps={{ href: `/blog/${articleSlug}` }}
+        >
+          Veja mais
+        </Button>
+      )
+    }
+  </div>
+</article>

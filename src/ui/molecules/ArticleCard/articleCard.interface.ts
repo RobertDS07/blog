@@ -7,6 +7,8 @@ interface Props {
   minutesToRead: number;
   createdAt: string;
   tags: CollectionEntry<"posts">["data"]["tags"];
+  activeShowMoreButton?: boolean;
+  isToTruncate?: boolean;
 }
 
 export default Props;
