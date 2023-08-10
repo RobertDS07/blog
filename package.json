@@ -45,6 +45,6 @@
     "prettier-plugin-tailwindcss": "^0.2.6",
     "puppeteer": "^20.7.4",
     "vite-plugin-svg-inject": "^1.0.10",
-    "yarn-audit-fix": "^9.3.10"
+    "yarn-audit-fix": "^9.3.12"
   }
 }
