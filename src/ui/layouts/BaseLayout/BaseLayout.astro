@@ -17,7 +17,9 @@ const CURRENT_URL = Astro.url.href;
 
 const CURRENT_PATHNAME = Astro.url.pathname;
 const ogImagePath =
-  CURRENT_PATHNAME.replace(/^\/(.+)?\/?$/, "$1").replace("/", "-") || "index"; //path where og image is auto-generated in build process
+  CURRENT_PATHNAME.replace(/^\/(.+)?\/?$/, "$1")
+    .replace(/\//g, "-")
+    .replace(/[^a-zA-Z0-9]$/, "") || "index"; //path where og image is auto-generated in build process
 ---
 
 <html lang="en">
