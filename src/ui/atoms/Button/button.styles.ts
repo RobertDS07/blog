@@ -26,8 +26,6 @@ const createClass = cva(
           "rounded-md",
           "border-2",
           "border-purple-main",
-          "px-5",
-          "py-2",
           "hover:bg-purple-main",
           "[&>svg]:hover:fill-white-500",
         ],
