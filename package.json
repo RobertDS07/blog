@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "test": "vitest",
+    "test:ci": "vitest --run",
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "lint": "eslint 'src/**/*.{js,astro}'",
