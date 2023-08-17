@@ -29,9 +29,13 @@ const Button = ({
 
   const Element = ({ children, ...props }: any) =>
     as === "a" ? (
-      <a {...props}>{children}</a>
+      <a {...props} data-testid="link">
+        {children}
+      </a>
     ) : (
-      <button {...props}>{children}</button>
+      <button {...props} data-testid="button">
+        {children}
+      </button>
     );
 
   return (
