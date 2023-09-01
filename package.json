@@ -52,6 +52,6 @@
     "vite-plugin-solid": "2.7.0",
     "vite-plugin-svg-inject": "1.0.10",
     "vitest": "0.34.1",
-    "yarn-audit-fix": "9.3.12"
+    "yarn-audit-fix": "10.0.1"
   }
 }
