@@ -10,7 +10,8 @@
     "@astrojs/ts-plugin",
     "class-variance-authority",
     "date-fns",
-    "puppeteer"
+    "puppeteer",
+    "jsdom"
   ],
   "parsers": {
     "**/*.cjs": "es6",
