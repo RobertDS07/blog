@@ -117,13 +117,12 @@
     sitemap "^7.1.1"
     zod "^3.17.3"
 
-"@astrojs/solid-js@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/solid-js/-/solid-js-2.2.0.tgz#c0e10726990884c103d482194deb27335419bf7c"
-  integrity sha512-yZcpwGnPnFsF74+9ppXBy/h3rAbrhNuRCz/pTck2KWufwsmn5SwUWTBWLGgSqK3dhaw56Mp2MMJQuLY3Nc5VMw==
+"@astrojs/solid-js@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/solid-js/-/solid-js-3.0.1.tgz#87ff515a298c8eba7ec71e3eb16a54ee9f89cbef"
+  integrity sha512-2powD8dA9WIH6E63ZWU+QRpI+9QmVsfmKk1VsQGvja0sxMcaGz/DJFpEFhHafK3sU4Htne7l5aAUnKVlA19iyw==
   dependencies:
-    babel-preset-solid "^1.4.2"
-    vitefu "^0.2.4"
+    vite-plugin-solid "^2.7.0"
 
 "@astrojs/tailwind@4.0.0":
   version "4.0.0"
@@ -2068,13 +2067,6 @@ babel-plugin-jsx-dom-expressions@^0.36.10:
     "@babel/types" "^7.20.7"
     html-entities "2.3.3"
     validate-html-nesting "^1.2.1"
-
-babel-preset-solid@^1.4.2:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/babel-preset-solid/-/babel-preset-solid-1.7.4.tgz#37da4a1fb5007ce30c002916b1e7f61e02ce24e4"
-  integrity sha512-0mbHNYkbOVYhH6L95VlHVkBEVQjOXSzUqLDiFxUcsg/tU4yTM/qx7FI8C+kmos9LHckQBSm3wtwoe1BZLNJR1w==
-  dependencies:
-    babel-plugin-jsx-dom-expressions "^0.36.10"
 
 babel-preset-solid@^1.7.2:
   version "1.7.7"
@@ -7219,7 +7211,7 @@ vite-node@0.34.1:
     picocolors "^1.0.0"
     vite "^3.0.0 || ^4.0.0"
 
-vite-plugin-solid@2.7.0:
+vite-plugin-solid@2.7.0, vite-plugin-solid@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/vite-plugin-solid/-/vite-plugin-solid-2.7.0.tgz#44de91335f30dfddd7f5f59a7019020860fcba2e"
   integrity sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==
