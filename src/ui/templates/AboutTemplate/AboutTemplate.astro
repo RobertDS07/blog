@@ -5,7 +5,7 @@ import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
 
 import Icon from "@ui/atoms/Icon/Icon";
 
-import { WORK_CONTENT, EXPERIENCES_CONTENT } from "./const";
+import { EXPERIENCES_CONTENT, WORK_CONTENT } from "./const";
 
 import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.png";
 ---
@@ -217,7 +217,7 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
             <article class="flex flex-col gap-2 lg:w-[45%]">
               <p class="text-xs font-light text-gray-400 lg:text-base">
                 {format(content.startedAt, "MMM yyyy")} -{" "}
-                {format(content.exitedAt, "MMM yyyy")}
+                {content.exitedAt ? format(content.exitedAt , "MMM yyyy") : 'Current'}
               </p>
 
               <h2 class="font-semibold lg:text-lg">{content.companyName}</h2>
