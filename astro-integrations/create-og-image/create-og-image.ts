@@ -5,7 +5,7 @@ import puppeteer from "puppeteer";
 const getPageTitle = async (path: string) => {
   const currentPageHtml = await fs.readFile(path, "utf-8");
   const pageTitleArray = currentPageHtml.match(
-    /(?<=<title>).+?(?=<\/title>)/
+    /(?<=<title>).+?(?=<\/title>)/,
   ) as RegExpMatchArray;
   const pageTitle = pageTitleArray[0];
 
@@ -14,7 +14,7 @@ const getPageTitle = async (path: string) => {
 
 const getTemplateStylesheetPath = (templatePageHtml: string) => {
   const templateStylesheetPathArray = templatePageHtml.match(
-    /<link[^>]*rel="stylesheet"[^>]*href="([^"]+)"/
+    /<link[^>]*rel="stylesheet"[^>]*href="([^"]+)"/,
   );
   const templateStylesheetPath = templateStylesheetPathArray
     ? templateStylesheetPathArray[1]
@@ -54,7 +54,7 @@ const createOgImage = (): AstroIntegration => ({
 
       const templatePageHtml = await fs.readFile(OG_TEMPLATE_PATH, "utf-8");
       const templateStylesheetPath = `${buildPath}${getTemplateStylesheetPath(
-        templatePageHtml
+        templatePageHtml,
       )}`;
 
       const browser = await puppeteer.launch({
