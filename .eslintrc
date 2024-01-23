@@ -34,7 +34,6 @@
     {
       "files": ["*"],
       "rules": {
-        "prettier/prettier": "off",
         "import-helpers/order-imports": [
           "warn",
           {
@@ -67,6 +66,9 @@
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "sourceType": "module"
+      },
+      "rules": {
+        "prettier/prettier": "error"
       }
     },
     {
