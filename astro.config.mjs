@@ -3,8 +3,8 @@ import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 
 import mdx from "@astrojs/mdx";
-import solid from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
+import solid from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
 
 import SVGInjectPlugin from "vite-plugin-svg-inject";
@@ -27,7 +27,7 @@ export default defineConfig({
     sitemap({
       filter: (url) => {
         const isToExclude = NON_INDEXED_PATHS.some((path) =>
-          url.endsWith(path)
+          url.endsWith(path),
         );
         return !isToExclude;
       },
