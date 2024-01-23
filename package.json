@@ -20,6 +20,9 @@
     "audit": "yarn-audit-fix --audit-level=moderate",
     "prepare": "husky install"
   },
+  "resolutions": {
+    "wrap-ansi": "7.0.0"
+  },
   "dependencies": {
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/sitemap": "^3.0.3",
@@ -50,7 +53,7 @@
     "prettier": "3.1.0",
     "prettier-plugin-astro": "^0.12.2",
     "prettier-plugin-tailwindcss": "0.5.7",
-    "puppeteer": "20.7.4",
+    "puppeteer": "21.7.0",
     "typescript": "^5.1.0",
     "vite-plugin-solid": "2.7.0",
     "vite-plugin-svg-inject": "1.0.10",
