@@ -11,7 +11,9 @@
     "class-variance-authority",
     "date-fns",
     "puppeteer",
-    "jsdom"
+    "jsdom",
+    "@astrojs/check",
+    "prettier-plugin-astro"
   ],
   "parsers": {
     "**/*.cjs": "es6",
