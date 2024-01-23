@@ -1,7 +1,19 @@
 const WORK_CONTENT = [
   {
-    startedAt: new Date("2022-01-06"),
-    exitedAt: new Date("2023-01-06"),
+    startedAt: new Date("2023-09-01"),
+    companyName: "teceo",
+    position: "Engenheiro Full Stack Pleno",
+    technologiesUsed: [
+      "React JS",
+      "Nest JS",
+      "Node JS",
+    ],
+    overview:
+      "No meu período na Teceo, como Engenheiro Full Stack Pleno, me concentrei em aprimorar tanto o software quanto a experiência dos desenvolvedores. Conduzi revisões de código, focando na qualidade e manutenção da nossa base de código. Desenvolvi novas funcionalidades, contribuindo significativamente para a expansão e melhoria do nosso software. Trabalhei na melhoria da Developer Experience (DX), implementando práticas e ferramentas para otimizar os processos de desenvolvimento. Também atuei na otimização de nossas codebases, tornando-as mais eficientes e gerenciáveis. Estive engajado em motivar a equipe de engenharia a buscar continuamente melhorias em nossos processos. Além disso, participei do desenvolvimento de novos filtros, visando enriquecer a experiência dos usuários em nossa plataforma.",
+  },
+  {
+    startedAt: new Date("2022-06-01"),
+    exitedAt: new Date("2023-06-01"),
     companyName: "Juntos Somos Mais",
     position: "Engenheiro Full Stack Pleno",
     technologiesUsed: [
@@ -16,8 +28,8 @@ const WORK_CONTENT = [
       "Contribuí significativamente para o desenvolvimento de um novo produto, liderando a arquitetura junto com a equipe. Participei ativamente da criação do nosso boilerplate para os novos serviços que estavam por vir. Além disso, tive participação na arquitetura de banco de dados e serviços, migrando de uma API monolítica para uma arquitetura modular, sempre lidando com a compatibilidade dos serviços existentes. Desempenhei um papel fundamental na estruturação da engenharia, introduzindo revisão de código, boas práticas e melhorias nos processos. Também ofereci ajuda fundamental na estruturação e criação das histórias e prazos para a unificação de nossos produtos.",
   },
   {
-    startedAt: new Date("2021-01-08"),
-    exitedAt: new Date("2022-01-06"),
+    startedAt: new Date("2021-08-01"),
+    exitedAt: new Date("2022-06-01"),
     companyName: "Doctor Web",
     position: "Desenvolvedor React Pleno",
     technologiesUsed: [
@@ -30,8 +42,8 @@ const WORK_CONTENT = [
       "Iniciei trabalhando com React e propus melhorias significativas para nossos projetos, aplicadas em grande parte deles. Introduzi uma cultura de revisão de código na empresa, estabelecendo boas práticas e modelos iniciais. Além disso, concluí um último projeto de desenvolvimento de um site em NextJs antes de deixar a empresa.",
   },
   {
-    startedAt: new Date("2020-01-11"),
-    exitedAt: new Date("2021-01-08"),
+    startedAt: new Date("2020-11-01"),
+    exitedAt: new Date("2021-08-01"),
     companyName: "Lean Comapany Digital",
     position: "Desenvolvedor Full Stack Júnior",
     technologiesUsed: [
@@ -46,8 +58,8 @@ const WORK_CONTENT = [
       "Atuei como o principal desenvolvedor em projetos, colaborando com dois desenvolvedores sêniors, desenvolvendo habilidades em Python e assumindo a responsabilidade pela manutenção e criação de funcionalidades no back-end. Liderei um projeto de desenvolvimento de um aplicativo em Flutter, onde aprendi a linguagem Dart. Além disso, solicitei e obtive um prazo adicional para refatorar o back-end em FeathersJs, garantindo um código de alta qualidade.",
   },
   {
-    startedAt: new Date("2022-01-10"),
-    exitedAt: new Date("2023-01-06"),
+    startedAt: new Date("2022-10-01"),
+    exitedAt: new Date("2023-06-01"),
     companyName: "Freelances",
     position: "Tech Lead e Desenvolvedor Front End",
     technologiesUsed: ["React JS", "React Native"],
@@ -142,6 +154,12 @@ trabalho de rastreamento e depuração.`,
     technologiesUsed: ["JavaScript", "React Native"],
     overview: `Fui contratado para concluir parte de um projeto POC.`,
   },
+  {
+    projectName: "teceo",
+    technologiesUsed: ["Typescript", "NodeJs", "NestJs", "ReactJs"],
+    overview: `Participei do time de desenvolvedores de uma plataforma de gerenciamento de vendas para marcas de roupas e vestuários. Lá participei da criação e manutenção do projeto, lidando com importações de planilhas até criação de um filtro mais dinâmico para melhorar a experiência dos nossos usuários.`,
+  },
 ];
 
-export { WORK_CONTENT, EXPERIENCES_CONTENT };
+export { EXPERIENCES_CONTENT, WORK_CONTENT };
+

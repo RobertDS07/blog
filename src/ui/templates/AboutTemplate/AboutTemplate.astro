@@ -216,7 +216,9 @@ import { EXPERIENCES_CONTENT, WORK_CONTENT } from "./const";
             <article class="flex flex-col gap-2 lg:w-[45%]">
               <p class="text-xs font-light text-gray-400 lg:text-base">
                 {format(content.startedAt, "MMM yyyy")} -{" "}
-                {format(content.exitedAt, "MMM yyyy")}
+                {content.exitedAt
+                  ? format(content.exitedAt, "MMM yyyy")
+                  : "Current"}
               </p>
 
               <h2 class="font-semibold lg:text-lg">{content.companyName}</h2>
