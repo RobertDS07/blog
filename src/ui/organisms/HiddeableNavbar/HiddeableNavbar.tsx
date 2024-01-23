@@ -8,7 +8,7 @@ import SocialMedia from "@ui/molecules/SocialMedia/SocialMedia";
 
 import { NAV_DATA, RESUME_LINK } from "../Navbar/const";
 import type { NavData } from "../Navbar/navbar.interface";
-import type Props from "./HiddeableNavbar.interface";
+import { type Props } from "./HiddeableNavbar.interface";
 import createClass, { createBackdropClass } from "./HiddeableNavbar.styles";
 
 const HiddleableNavbar = ({ selectedLink }: Props) => {

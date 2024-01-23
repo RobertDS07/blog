@@ -12,9 +12,8 @@ interface NavData {
   href: string;
 }
 
-interface Props {
+export interface Props {
   selectedLink: PossibleNavLinks;
 }
 
-export default Props;
 export type { NavData, PossibleNavLinks };

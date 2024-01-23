@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 
 import ArticlesPreviewTemplate from "@ui/templates/ArticlesPreviewTemplate/ArticlesPreviewTemplate.astro";
-import type ArticlesPreviewTemplateProps from "@ui/templates/ArticlesPreviewTemplate/articlesPreviewTemplate.interface";
+import { type Props as ArticlesPreviewTemplateProps } from "@ui/templates/ArticlesPreviewTemplate/articlesPreviewTemplate.interface";
 
 const postsEntries = await getCollection("posts");
 const postsSortedByCreatedAt = postsEntries.sort(
   (postA, postB) =>
     new Date(postA.data.createdAt).getTime() -
-    new Date(postB.data.createdAt).getTime()
+    new Date(postB.data.createdAt).getTime(),
 );
 const formattedPostsToTemplate: ArticlesPreviewTemplateProps["articles"] =
   postsSortedByCreatedAt.map((post) => ({

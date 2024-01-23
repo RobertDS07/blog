@@ -1,13 +1,12 @@
 ---
 import { format } from "date-fns";
+import MyProfilePicture from "public/images/profile-picture/robert-damaceno-full-body.png";
 
 import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
 
 import Icon from "@ui/atoms/Icon/Icon";
 
-import { WORK_CONTENT, EXPERIENCES_CONTENT } from "./const";
-
-import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.png";
+import { EXPERIENCES_CONTENT, WORK_CONTENT } from "./const";
 ---
 
 <BaseLayout
@@ -32,7 +31,7 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
 
         <div class="flex flex-col items-center gap-6 lg:items-start">
           <img
-            src={MyProfilePicture}
+            src={MyProfilePicture.src}
             alt="My photo (Robert)"
             class="h-40 w-40 rounded-3xl object-cover object-top shadow-md shadow-purple-main lg:h-64 lg:min-w-64"
           />

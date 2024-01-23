@@ -1,4 +1,4 @@
-import type Props from "./Breadcrumb.interface";
+import { type Props } from "./Breadcrumb.interface";
 
 const Breadcrumb = ({ links }: Props) => {
   const lastIndex = links.length - 1;

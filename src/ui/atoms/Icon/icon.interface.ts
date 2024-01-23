@@ -20,8 +20,6 @@ export type IconTypes =
   | "solid"
   | "aws";
 
-interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
+export interface Props extends Pick<HTMLAttributes<"svg">, "class"> {
   type: IconTypes;
 }
-
-export default Props;

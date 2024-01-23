@@ -1,12 +1,12 @@
 ---
 import { format } from "date-fns";
+import MyProfilePicture from "public/images/profile-picture/robert-damaceno.png";
 
 import Breadcrumb from "@ui/molecules/Breadcrumb/Breadcrumb";
 
 import BaseLayout from "../../layouts/BaseLayout/BaseLayout.astro";
-import type Props from "./blogPostTemplate.interface";
+import { type Props } from "./blogPostTemplate.interface";
 
-import profilePhoto from "/images/profile-picture/robert-damaceno.png";
 
 const { data, slug } = Astro.props;
 ---
@@ -31,7 +31,7 @@ const { data, slug } = Astro.props;
 
       <div class="flex flex-row gap-4">
         <img
-          src={profilePhoto}
+          src={MyProfilePicture.src}
           alt="Photo from Robert Damaceno"
           class="hidden h-16 min-h-16 w-16 min-w-16 rounded-full min-[376px]:block"
         />

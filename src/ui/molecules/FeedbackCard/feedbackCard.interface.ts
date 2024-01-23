@@ -3,7 +3,7 @@ interface SocialMediaData {
   username: string;
 }
 
-interface Props {
+export interface Props {
   name: string;
   feedback: string;
   photoSrc: string;
@@ -12,5 +12,3 @@ interface Props {
   isToTruncate?: boolean;
   activeShowMoreButton?: boolean;
 }
-
-export default Props;

@@ -1,4 +1,4 @@
-import type Props from "./button.interface";
+import { type Props } from "./button.interface";
 import createClass from "./button.styles";
 
 const Button = ({

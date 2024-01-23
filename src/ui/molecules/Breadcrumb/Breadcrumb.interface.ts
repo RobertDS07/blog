@@ -3,8 +3,6 @@ interface LinkProps {
   text: string;
 }
 
-interface Props {
+export interface Props {
   links: LinkProps[];
 }
-
-export default Props;

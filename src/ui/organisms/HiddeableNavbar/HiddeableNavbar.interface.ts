@@ -1,7 +1,5 @@
 import type { PossibleNavLinks } from "../Navbar/navbar.interface";
 
-interface Props {
+export interface Props {
   selectedLink: PossibleNavLinks;
 }
-
-export default Props;
