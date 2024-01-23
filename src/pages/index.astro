@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 
 import HomeTemplate from "@ui/templates/HomeTemplate/HomeTemplate.astro";
-import type HomeTemplateProps from "@ui/templates/HomeTemplate/homeTemplate.interface";
+import { type Props as HomeTemplateProps } from "@ui/templates/HomeTemplate/homeTemplate.interface";
 
 const postsEntries = await getCollection("posts");
 const postsSortedByCreatedAt = postsEntries.sort(
   (postA, postB) =>
     new Date(postA.data.createdAt).getTime() -
-    new Date(postB.data.createdAt).getTime()
+    new Date(postB.data.createdAt).getTime(),
 );
 const onlyFirstFourPosts = postsSortedByCreatedAt.slice(0, 4);
 const formattedPostsToHome: HomeTemplateProps["articles"] =
@@ -25,7 +25,7 @@ const feedbacksEntries = await getCollection("feedbacks");
 const feedbacksSortedByCreatedAt = feedbacksEntries.sort(
   (postA, postB) =>
     new Date(postA.data.createdAt).getTime() -
-    new Date(postB.data.createdAt).getTime()
+    new Date(postB.data.createdAt).getTime(),
 );
 const onlyFirstFourFeedbacks = feedbacksSortedByCreatedAt.slice(0, 4);
 const formattedFeedbackToHome: HomeTemplateProps["feedbacks"] =

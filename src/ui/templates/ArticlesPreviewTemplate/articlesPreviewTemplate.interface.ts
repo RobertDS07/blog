@@ -1,6 +1,6 @@
-import type ArticleCardProps from "../../molecules/ArticleCard/articleCard.interface";
+import { type Props as ArticleCardProps } from "../../molecules/ArticleCard/articleCard.interface";
 
-interface Props {
+export interface Props {
   articles: Array<
     Pick<
       ArticleCardProps,
@@ -13,5 +13,3 @@ interface Props {
     >
   >;
 }
-
-export default Props;

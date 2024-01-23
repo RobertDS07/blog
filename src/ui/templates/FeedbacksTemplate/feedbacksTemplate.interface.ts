@@ -1,7 +1,5 @@
-import type FeedbackCardProps from "@ui/molecules/FeedbackCard/feedbackCard.interface";
+import { type Props as FeedbackCardProps } from "@ui/molecules/FeedbackCard/feedbackCard.interface";
 
-interface Props {
+export interface Props {
   feedbacks: FeedbackCardProps[];
 }
-
-export default Props;

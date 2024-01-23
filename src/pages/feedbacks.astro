@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 
 import FeedbacksTemplate from "@ui/templates/FeedbacksTemplate/FeedbacksTemplate.astro";
-import type FeedbacksTemplatePros from "@ui/templates/FeedbacksTemplate/feedbacksTemplate.interface";
+import { type Props as FeedbacksTemplatePros } from "@ui/templates/FeedbacksTemplate/feedbacksTemplate.interface";
 
 const feedbacksEntries = await getCollection("feedbacks");
 const feedbacksSortedByCreatedAt = feedbacksEntries.sort(
   (postA, postB) =>
     new Date(postA.data.createdAt).getTime() -
-    new Date(postB.data.createdAt).getTime()
+    new Date(postB.data.createdAt).getTime(),
 );
 const formattedFeedbackToTemplate: FeedbacksTemplatePros["feedbacks"] =
   feedbacksSortedByCreatedAt.map((feedback) => ({

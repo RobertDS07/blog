@@ -16,7 +16,7 @@ import SolidIcon from "../../../../public/icons/solid.svg";
 import TailwindIcon from "../../../../public/icons/tailwind.svg";
 import TwitterIcon from "../../../../public/icons/twitter.svg";
 import TypescriptIcon from "../../../../public/icons/typescript.svg";
-import type Props from "./icon.interface";
+import { type Props } from "./icon.interface";
 
 const Icon = ({ type, ...svgAttributes }: Props) => {
   const getIcon = () => {

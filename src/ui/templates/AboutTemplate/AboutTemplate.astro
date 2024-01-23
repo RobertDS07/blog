@@ -1,13 +1,12 @@
 ---
 import { format } from "date-fns";
+import MyProfilePicture from "public/images/profile-picture/robert-damaceno-full-body.png";
 
 import BaseLayout from "@ui/layouts/BaseLayout/BaseLayout.astro";
 
 import Icon from "@ui/atoms/Icon/Icon";
 
 import { EXPERIENCES_CONTENT, WORK_CONTENT } from "./const";
-
-import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.png";
 ---
 
 <BaseLayout
@@ -32,7 +31,7 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
 
         <div class="flex flex-col items-center gap-6 lg:items-start">
           <img
-            src={MyProfilePicture}
+            src={MyProfilePicture.src}
             alt="My photo (Robert)"
             class="h-40 w-40 rounded-3xl object-cover object-top shadow-md shadow-purple-main lg:h-64 lg:min-w-64"
           />
@@ -217,7 +216,9 @@ import MyProfilePicture from "/images/profile-picture/robert-damaceno-full-body.
             <article class="flex flex-col gap-2 lg:w-[45%]">
               <p class="text-xs font-light text-gray-400 lg:text-base">
                 {format(content.startedAt, "MMM yyyy")} -{" "}
-                {content.exitedAt ? format(content.exitedAt , "MMM yyyy") : 'Current'}
+                {content.exitedAt
+                  ? format(content.exitedAt, "MMM yyyy")
+                  : "Current"}
               </p>
 
               <h2 class="font-semibold lg:text-lg">{content.companyName}</h2>

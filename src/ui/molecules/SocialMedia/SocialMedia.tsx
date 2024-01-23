@@ -1,6 +1,6 @@
 import Icon from "@ui/atoms/Icon/Icon";
 
-import type Props from "./socialMedia.interface";
+import { type Props } from "./socialMedia.interface";
 import createWrapperClass from "./socialMedia.styles";
 
 const SocialMedia = ({ orientation = "VERTICAL", fill = "purple" }: Props) => {

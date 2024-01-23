@@ -1,6 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 
-interface Props {
+export interface Props {
   title: string;
   summary: string;
   articleSlug: string;
@@ -10,5 +10,3 @@ interface Props {
   activeShowMoreButton?: boolean;
   isToTruncate?: boolean;
 }
-
-export default Props;

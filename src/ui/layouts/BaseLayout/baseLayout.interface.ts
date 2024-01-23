@@ -5,10 +5,8 @@ interface MetaProps {
   description: string;
 }
 
-interface Props {
+export interface Props {
   pageTitle: string;
   selectedNavLink: PossibleNavLinks;
   meta: MetaProps;
 }
-
-export default Props;

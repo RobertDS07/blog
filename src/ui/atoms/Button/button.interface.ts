@@ -23,5 +23,4 @@ interface Props extends VariantProps<typeof createClass> {
   class?: HTMLAttributes<"button">["class"];
 }
 
-export type { PossibleHtmlTag };
-export default Props;
+export type { PossibleHtmlTag, Props };

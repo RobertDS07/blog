@@ -2,10 +2,13 @@
 import "@css/base.css";
 
 import * as fs from "fs/promises";
+import MyProfilePicture from "public/images/profile-picture/robert-damaceno.png";
 
-import photoSrc from "/images/profile-picture/robert-damaceno.png";
+const BUILD_PATH = "dist";
 
-const bufferFromPhoto = await fs.readFile(`${process.cwd()}/public${photoSrc}`);
+const bufferFromPhoto = await fs.readFile(
+  `${process.cwd()}/${BUILD_PATH}${MyProfilePicture.src}`,
+);
 ---
 
 <html lang="en">
