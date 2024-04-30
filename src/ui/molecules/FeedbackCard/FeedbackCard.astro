@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Button from "@ui/atoms/Button/Button";
 
 import { type Props } from "./feedbackCard.interface";
@@ -36,9 +38,10 @@ const getFeedback = () => {
   <span class="absolute left-0 top-0 h-full w-2 bg-purple-main"></span>
 
   <div class="flex flex-row gap-4">
-    <img
+    <Image
+      inferSize
       src={photoSrc}
-      alt={`Photo from ${name}`}
+      alt={name}
       class="hidden h-16 min-h-16 w-16 min-w-16 rounded-full shadow-sm shadow-purple-main transition-all xs:block"
     />
 

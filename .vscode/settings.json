@@ -1,10 +1,16 @@
 {
   "prettier.documentSelectors": ["**/*.astro"],
   "mdx.experimentalLanguageServer": true,
-  "eslint.validate": ["astro", "typescript"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

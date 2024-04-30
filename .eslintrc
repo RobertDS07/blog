@@ -1,6 +1,7 @@
 {
-  "extends": ["prettier", "eslint:recommended"],
+  "extends": ["prettier", "eslint:recommended", "plugin:astro/recommended"],
   "plugins": ["prettier", "eslint-plugin-jsx-a11y", "eslint-plugin-import-helpers"],
+  "ignorePatterns": ["node_modules/", "dist/", "public/", "*.mjs"],
   "overrides": [
     {
       "files": ["*.astro"],
