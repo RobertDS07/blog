@@ -55,7 +55,9 @@ const createOgImage = (): AstroIntegration => ({
         templatePageHtml,
       )}`;
 
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      });
 
       const pathToSaveOgImages = await createDirectoryToOgs(IMAGES_BASE_PATH);
 
