@@ -4,10 +4,8 @@ import puppeteer from "puppeteer";
 
 const getPageTitle = async (path: string) => {
   const currentPageHtml = await fs.readFile(path, "utf-8");
-  const pageTitleArray = currentPageHtml.match(
-    /(?<=<title>).+?(?=<\/title>)/,
-  ) as RegExpMatchArray;
-  const pageTitle = pageTitleArray[0];
+  const pageTitleMatch = currentPageHtml.match(/(?<=<title>).+?(?=<\/title>)/);
+  const pageTitle = pageTitleMatch?.[0] ?? "";
 
   return pageTitle;
 };
@@ -57,9 +55,7 @@ const createOgImage = (): AstroIntegration => ({
         templatePageHtml,
       )}`;
 
-      const browser = await puppeteer.launch({
-        headless: true,
-      });
+      const browser = await puppeteer.launch();
 
       const pathToSaveOgImages = await createDirectoryToOgs(IMAGES_BASE_PATH);
 
