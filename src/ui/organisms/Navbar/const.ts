@@ -24,4 +24,4 @@ export const NAV_DATA: NavData[] = [
 ];
 
 export const RESUME_LINK =
-  "https://drive.google.com/file/d/1cYBmqbxFYuzquOw6SHX7KsNqQAHYxAw9/view?usp=sharing";
+  "https://drive.google.com/file/d/1zm4MtD-2r_ec4WBvtWzKEpqiaTFjv3-9/view?usp=sharing";
