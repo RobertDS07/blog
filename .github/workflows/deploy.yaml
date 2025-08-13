@@ -26,22 +26,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Setup Chrome
-        id: chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Install Chromium dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcomposite1 libxdamage1 \
-            libxfixes3 libxrandr2 libgbm1 libasound2 libpangocairo-1.0-0 \
-            libpango-1.0-0 libcairo2 libatspi2.0-0
       - name: Install modules
         run: yarn
       - name: Build application
-        env:
-          PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: yarn build
       - name: Deploy to S3
         run: aws s3 sync ./dist/ s3://${{ secrets.BUCKET_ID }}
