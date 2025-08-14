@@ -62,7 +62,10 @@ const createOgImage = (): AstroIntegration => ({
       const pathToSaveOgImages = await createDirectoryToOgs(IMAGES_BASE_PATH);
 
       for (const pageData of routes) {
-        const internalPagePath = pageData.distURL?.pathname;
+        const internalPagePath = Array.isArray(pageData.distURL)
+          ? (pageData.distURL[0] as any)?.pathname
+          : (pageData.distURL as any)?.pathname;
+
         if (!internalPagePath) {
           continue;
         }

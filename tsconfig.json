@@ -1,19 +1,21 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": ["src", "astro.config.mjs", "src/env.d.ts"],
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
-      },
+      }
     ],
     "paths": {
       "@ui/*": ["src/ui/*"],
       "@css/*": ["src/css/*"],
       "@page/*": ["src/page/*"],
-      "@public/*": ["public/*"],
+      "@public/*": ["public/*"]
     }
   },
 }
